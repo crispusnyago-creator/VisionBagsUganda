@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vision Bags Uganda — Practical Skills. Stronger Communities.</title>
+<meta name="description" content="Vision Bags Uganda is a community-based organization in Seeta, Mukono, equipping people with practical skills for more sustainable livelihoods." />
+
+<meta property="og:title" content="Vision Bags Uganda" />
+<meta property="og:description" content="Practical skills and opportunities that support more sustainable livelihoods." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   TOKENS
+   ========================================================= */
+:root {
+  --c-deep-blue:   #123B69;
+  --c-action-blue: #2463A6;
+  --c-pale-blue:   #EAF3FC;
+  --c-white:       #FFFFFF;
+  --c-text:        #172B3D;
+  --c-muted:       #617386;
+
+  --bg:            var(--c-white);
+  --bg-alt:        var(--c-pale-blue);
+  --bg-inverse:    var(--c-deep-blue);
+  --fg:            var(--c-text);
+  --fg-muted:      var(--c-muted);
+  --fg-inverse:    var(--c-white);
+  --accent:        var(--c-action-blue);
+  --border:        #D9E3EE;
+  --focus-ring:    #F2B33D;
+
+  --font-sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --fs-xs:  0.8125rem;
+  --fs-sm:  0.9375rem;
+  --fs-md:  1.0625rem;
+  --fs-lg:  1.25rem;
+  --fs-xl:  1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 2.75rem;
+  --fs-4xl: 3.5rem;
+
+  --sp-1: 0.25rem;  --sp-2: 0.5rem;  --sp-3: 0.75rem;
+  --sp-4: 1rem;     --sp-5: 1.5rem;  --sp-6: 2rem;
+  --sp-7: 3rem;     --sp-8: 4rem;    --sp-9: 6rem;
+
+  --r-sm: 6px;  --r-md: 12px;  --r-lg: 18px;  --r-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(18, 59, 105, 0.06);
+  --shadow-md: 0 6px 24px rgba(18, 59, 105, 0.08);
+  --shadow-lg: 0 18px 48px rgba(18, 59, 105, 0.12);
+
+  --t-fast: 150ms ease;
+  --t-med:  250ms ease;
+
+  --container: 1200px;
+  --header-h: 72px;
+}
+
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video { max-width: 100%; display: block; height: auto; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--c-deep-blue); color: #fff;
+  padding: var(--sp-3) var(--sp-4); z-index: 100;
+  border-radius: var(--r-sm);
+}
+.skip-link:focus { left: var(--sp-4); top: var(--sp-4); }
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+h1, h2, h3, h4 {
+  color: var(--c-deep-blue);
+  line-height: 1.15;
+  margin: 0 0 var(--sp-4);
+  letter-spacing: -0.01em;
+}
+h1 { font-size: clamp(2rem, 4.5vw, var(--fs-4xl)); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3vw, var(--fs-3xl)); font-weight: 700; }
+h3 { font-size: clamp(1.15rem, 2vw, var(--fs-xl)); font-weight: 600; }
+h4 { font-size: var(--fs-lg); font-weight: 600; }
+p  { margin: 0 0 var(--sp-4); }
+small { font-size: var(--fs-sm); color: var(--fg-muted); }
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+.section { padding-block: var(--sp-9); }
+.section--alt { background: var(--bg-alt); }
+.section--deep { background: var(--bg-inverse); color: var(--fg-inverse); }
+.section--deep h2, .section--deep h3 { color: var(--fg-inverse); }
+.section__head { max-width: 720px; margin-bottom: var(--sp-6); }
+.section__head p { color: var(--fg-muted); font-size: var(--fs-lg); }
+
+.section__head--row {
+  display: flex; flex-wrap: wrap;
+  align-items: flex-end; justify-content: space-between;
+  gap: var(--sp-4); max-width: none;
+}
+
+.grid { display: grid; gap: var(--sp-5); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1024px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .grid--3, .grid--4 { grid-template-columns: 1fr; }
+  .section { padding-block: var(--sp-8); }
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--sp-2);
+  padding: 0.75rem 1.5rem;
+  font-size: var(--fs-sm); font-weight: 600; letter-spacing: 0.01em;
+  border-radius: var(--r-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.btn:hover { text-decoration: none; }
+.btn--primary { background: var(--accent); color: var(--c-white); }
+.btn--primary:hover { background: var(--c-deep-blue); }
+.btn--secondary {
+  background: transparent; color: var(--c-deep-blue); border-color: var(--c-deep-blue);
+}
+.btn--secondary:hover { background: var(--c-deep-blue); color: var(--c-white); }
+.btn--ghost-light {
+  background: transparent; color: var(--c-white); border-color: rgba(255,255,255,0.6);
+}
+.btn--ghost-light:hover { background: var(--c-white); color: var(--c-deep-blue); border-color: var(--c-white); }
+.btn--lg { padding: 0.95rem 1.9rem; font-size: var(--fs-md); }
+.btn--block { width: 100%; }
+.btn[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+.btn__spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.45);
+  border-top-color: var(--c-white);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+  margin-left: var(--sp-2);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* =========================================================
+   UNIQUE LAYERED HEADER
+   ========================================================= */
+
+/* --- Top Identity Strip --- */
+.top-strip {
+  background: var(--c-deep-blue);
+  color: rgba(255,255,255,0.85);
+  font-size: var(--fs-xs);
+  padding-block: 8px;
+}
+.top-strip__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-4);
+}
+.top-strip__message {
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+.top-strip__links {
+  display: flex; align-items: center; gap: var(--sp-4);
+}
+.top-strip__links a {
+  color: rgba(255,255,255,0.8);
+  transition: color var(--t-fast);
+}
+.top-strip__links a:hover { color: #fff; text-decoration: none; }
+.top-strip__cta {
+  color: #fff !important;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding-bottom: 1px;
+}
+.top-strip__cta:hover { border-bottom-color: #fff; }
+
+@media (max-width: 700px) {
+  .top-strip__message { display: none; }
+  .top-strip__inner { justify-content: center; gap: var(--sp-6); }
+}
+
+/* --- Header Main --- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--c-white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--t-med);
+}
+.site-header.is-scrolled { box-shadow: var(--shadow-md); }
+
+.header-main__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-5);
+  padding-block: var(--sp-3);
+}
+
+/* --- Brand --- */
+.brand {
+  display: flex; align-items: center; gap: var(--sp-3);
+  color: var(--c-deep-blue);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.brand:hover { text-decoration: none; }
+.brand__logo-wrap {
+  width: 48px; height: 48px;
+  border-radius: var(--r-md);
+  background: var(--c-white);
+  box-shadow: var(--shadow-sm);
+  display: grid; place-items: center;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.brand__logo {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+.brand__logo-fallback {
+  width: 40px; height: 40px;
+  border-radius: var(--r-md);
+  background: var(--c-deep-blue);
+  color: #fff;
+  display: grid; place-items: center;
+  font-size: var(--fs-md); font-weight: 700;
+}
+.brand__name {
+  display: flex; flex-direction: column;
+  line-height: 1.15;
+  font-size: var(--fs-lg);
+}
+.brand__location {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+
+/* --- Floating Segmented Navigation Panel --- */
+.nav-panel {
+  background: var(--c-pale-blue);
+  border: 1px solid rgba(18,59,105,0.08);
+  border-radius: var(--r-pill);
+  padding: 4px;
+}
+.nav-panel__list {
+  display: flex; align-items: center; gap: 2px;
+  list-style: none; padding: 0; margin: 0;
+}
+.nav-panel__list > li { position: relative; }
+.nav-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 8px 16px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-muted);
+  border-radius: var(--r-pill);
+  transition: color var(--t-fast), background var(--t-fast), box-shadow var(--t-fast);
+}
+.nav-link:hover {
+  color: var(--c-deep-blue);
+  background: rgba(255,255,255,0.65);
+  text-decoration: none;
+}
+.nav-link.is-active {
+  color: var(--c-deep-blue);
+  background: var(--c-white);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+.nav-link svg {
+  width: 12px; height: 12px;
+  transition: transform var(--t-fast);
+}
+.nav-panel__list > li:hover .nav-link svg { transform: rotate(180deg); }
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--c-white);
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 8px;
+  min-width: 230px;
+  list-style: none; margin: 0;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--t-fast), transform var(--t-fast);
+}
+.nav-panel__list > li:hover .dropdown {
+  opacity: 1; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.dropdown a {
+  display: block;
+  padding: 8px 14px;
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+  border-radius: var(--r-sm);
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.dropdown a:hover {
+  background: var(--c-pale-blue);
+  color: var(--c-deep-blue);
+  text-decoration: none;
+}
+
+/* --- Header Actions (Desktop) --- */
+.header-actions {
+  display: flex; align-items: center; gap: var(--sp-2);
+}
+.header-actions .btn {
+  padding: 0.6rem 1.2rem;
+  font-size: var(--fs-sm);
+}
+.header__signin {
+  background: none;
+  border: 1px solid transparent;
+  padding: 0.6rem 1rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-deep-blue);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: background var(--t-fast), border-color var(--t-fast);
+}
+.header__signin:hover {
+  background: var(--bg-alt);
+  border-color: var(--border);
+}
+
+/* --- Mobile Toggle --- */
+.menu-toggle {
+  display: none;
+  background: none; border: 0;
+  padding: var(--sp-2);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+}
+.menu-toggle__bar {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--c-deep-blue);
+  border-radius: 2px;
+  position: relative;
+  transition: background var(--t-fast);
+}
+.menu-toggle__bar + .menu-toggle__bar { margin-top: 6px; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Mobile Drawer --- */
+.mobile-menu {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(100%, 380px);
+  background: var(--c-white);
+  box-shadow: var(--shadow-lg);
+  z-index: 60;
+  transform: translateX(100%);
+  transition: transform var(--t-med);
+  display: flex; flex-direction: column;
+}
+.mobile-menu.is-open { transform: translateX(0); }
+.mobile-menu__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--sp-5) var(--sp-5);
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu__title {
+  font-weight: 700; color: var(--c-deep-blue);
+  font-size: var(--fs-lg);
+}
+.mobile-menu__close {
+  background: none; border: 0; padding: var(--sp-2);
+  border-radius: var(--r-sm); cursor: pointer;
+  color: var(--c-muted);
+}
+.mobile-menu__close:hover { background: var(--bg-alt); }
+.mobile-menu__body {
+  flex: 1; overflow-y: auto;
+  padding: var(--sp-5);
+}
+.mobile-links { list-style: none; padding: 0; margin: 0; }
+.mobile-links li + li { border-top: 1px solid var(--border); }
+.mobile-link {
+  display: block;
+  padding: var(--sp-4) 0;
+  color: var(--c-deep-blue);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+.mobile-link:hover { color: var(--accent); text-decoration: none; }
+.mobile-menu__footer {
+  padding: var(--sp-5);
+  border-top: 1px solid var(--border);
+}
+.mobile-menu-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(10,20,35,0.5);
+  backdrop-filter: blur(2px);
+  z-index: 55;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--t-med);
+}
+.mobile-menu-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+@media (max-width: 1024px) {
+  .nav-panel { display: none; }
+  .header-actions { display: none; }
+  .menu-toggle { display: block; }
+}
+
+/* =========================================================
+   HERO SLIDER
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 640px;
+  height: 88vh;
+  max-height: 780px;
+  background: var(--c-deep-blue);
+  color: var(--c-white);
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero__slides { position: absolute; inset: 0; z-index: 0; }
+.hero__slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 900ms ease;
+  will-change: opacity;
+}
+.hero__slide.is-active { opacity: 1; }
+.hero__slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  transition: transform 8000ms linear;
+}
+.hero__slide.is-active img { transform: scale(1); }
+
+.hero__overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(120deg, rgba(18, 59, 105, 0.92) 0%, rgba(18, 59, 105, 0.72) 42%, rgba(18, 59, 105, 0.38) 72%, rgba(18, 59, 105, 0.55) 100%);
+}
+
+.hero__inner {
+  position: relative; z-index: 2;
+  height: 100%;
+  display: flex; align-items: center;
+  padding-block: var(--sp-8);
+}
+.hero__content {
+  max-width: 660px;
+  color: var(--c-white);
+  animation: heroFade 700ms ease both;
+}
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  padding: var(--sp-1) var(--sp-3);
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--c-white);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: var(--sp-5);
+}
+.hero h1 {
+  color: var(--c-white);
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  margin-bottom: var(--sp-5);
+}
+.hero__lead {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: rgba(255,255,255,0.88);
+  max-width: 52ch;
+  margin-bottom: var(--sp-6);
+}
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+
+.hero__controls {
+  position: absolute; z-index: 3;
+  bottom: var(--sp-6); left: 0; right: 0;
+}
+.hero__controls-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-4);
+}
+.hero__dots { display: flex; align-items: center; gap: var(--sp-2); }
+.hero__dot {
+  width: 10px; height: 10px; border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.4);
+  border: none; padding: 0; cursor: pointer;
+  transition: background var(--t-fast), width var(--t-fast);
+}
+.hero__dot[aria-selected="true"] { background: var(--c-white); width: 32px; }
+.hero__arrows { display: flex; gap: var(--sp-2); }
+.hero__arrow {
+  width: 44px; height: 44px;
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.08);
+  color: var(--c-white);
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: background var(--t-fast), border-color var(--t-fast);
+}
+.hero__arrow:hover { background: rgba(255,255,255,0.2); border-color: var(--c-white); }
+.hero__arrow svg { width: 18px; height: 18px; }
+
+@media (max-width: 720px) {
+  .hero { min-height: 560px; height: auto; }
+  .hero__inner { padding-block: var(--sp-8) 6rem; }
+  .hero__arrows { display: none; }
+}
+
+/* =========================================================
+   ABOUT STRIP
+   ========================================================= */
+.about-strip__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8); align-items: center;
+}
+.about-strip__meta {
+  display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-4);
+}
+.chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--c-white); border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm); color: var(--c-deep-blue); font-weight: 500;
+}
+.media-frame {
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 3;
+  background: var(--bg-alt);
+}
+.media-frame img { width: 100%; height: 100%; object-fit: cover; }
+.media-placeholder {
+  display: grid; place-items: center;
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg, var(--c-deep-blue), var(--c-action-blue));
+  color: rgba(255,255,255,0.75);
+  font-size: var(--fs-sm); text-align: center; padding: var(--sp-5);
+}
+@media (max-width: 800px) {
+  .about-strip__grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+.card {
+  background: var(--c-white);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform var(--t-med), box-shadow var(--t-med);
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.card__media {
+  aspect-ratio: 16 / 10; background: var(--bg-alt); overflow: hidden;
+}
+.card__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform var(--t-med);
+}
+.card:hover .card__media img { transform: scale(1.03); }
+.card__placeholder {
+  display: grid; place-items: center;
+  width: 100%; height: 100%;
+  color: var(--c-action-blue); background: var(--bg-alt);
+  font-size: var(--fs-sm); text-align: center; padding: var(--sp-4);
+}
+.card__body {
+  padding: var(--sp-5); display: flex; flex-direction: column;
+  gap: var(--sp-2); flex: 1;
+}
+.card__title { font-size: var(--fs-lg); margin: 0; }
+.card__summary { color: var(--fg-muted); font-size: var(--fs-sm); margin: 0; }
+.card__footer { margin-top: auto; padding-top: var(--sp-3); }
+.card__link {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  font-size: var(--fs-sm); font-weight: 600; color: var(--accent);
+}
+.card__link:hover { color: var(--c-deep-blue); text-decoration: none; }
+.card__badge {
+  display: inline-block;
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--accent); background: var(--bg-alt);
+  padding: 2px var(--sp-3); border-radius: var(--r-pill);
+  width: fit-content;
+}
+
+/* =========================================================
+   APPROACH
+   ========================================================= */
+.approach {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5);
+}
+.approach__step {
+  background: var(--c-white);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  border: 1px solid var(--border);
+}
+.approach__num {
+  width: 40px; height: 40px;
+  border-radius: var(--r-pill);
+  background: var(--c-deep-blue); color: var(--c-white);
+  font-weight: 700; display: grid; place-items: center;
+  margin-bottom: var(--sp-4);
+}
+.approach__step h3 { margin-bottom: var(--sp-2); font-size: var(--fs-lg); }
+.approach__step p { color: var(--fg-muted); font-size: var(--fs-sm); margin: 0; }
+@media (max-width: 800px) { .approach { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   IMPACT
+   ========================================================= */
+.impact-mission {
+  background: var(--c-white);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  max-width: 780px;
+  margin-inline: auto;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.impact-mission p {
+  font-size: var(--fs-lg);
+  color: var(--c-deep-blue);
+  margin-bottom: var(--sp-5);
+}
+
+/* =========================================================
+   PARTNERS CTA
+   ========================================================= */
+.partners-cta {
+  background: var(--c-deep-blue);
+  color: var(--c-white);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.partners-cta::before {
+  content: ""; position: absolute;
+  inset: -40% -10% auto auto;
+  width: 60%; height: 160%;
+  background: radial-gradient(circle, rgba(36,99,166,0.55), transparent 60%);
+  transform: rotate(-12deg); pointer-events: none;
+}
+.partners-cta > * { position: relative; }
+.partners-cta h2 { color: var(--c-white); margin-bottom: var(--sp-3); }
+.partners-cta p {
+  color: rgba(255,255,255,0.85);
+  font-size: var(--fs-lg);
+  max-width: 60ch;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+}
+
+/* =========================================================
+   NEWS
+   ========================================================= */
+.news-card__meta {
+  display: flex; gap: var(--sp-3);
+  font-size: var(--fs-xs); color: var(--fg-muted);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  font-weight: 600; margin-bottom: var(--sp-2);
+}
+
+/* =========================================================
+   REDESIGNED SIGNATURE FOOTER
+   ========================================================= */
+.site-footer {
+  background: #0A2540;
+  color: rgba(255,255,255,0.85);
+  padding-top: var(--sp-8);
+  border-top: 4px solid var(--c-action-blue);
+}
+
+/* Partner Showcase */
+.footer-partners {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: var(--sp-6);
+  margin-bottom: var(--sp-7);
+}
+.footer-partners__head {
+  text-align: center;
+  margin-bottom: var(--sp-5);
+}
+.footer-partners__head h2 {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.55);
+  margin: 0 0 var(--sp-2);
+}
+.footer-partners__head p {
+  color: rgba(255,255,255,0.65);
+  font-size: var(--fs-sm);
+  margin: 0;
+}
+
+.partner-rail {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-4);
+  align-items: center;
+}
+.partner-slot {
+  aspect-ratio: 3 / 2;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-md);
+  display: grid; place-items: center;
+  padding: var(--sp-3);
+  transition: all var(--t-fast);
+}
+.partner-slot:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+.partner-slot img {
+  max-width: 100%;
+  max-height: 56px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(2);
+  opacity: 0.6;
+  transition: filter var(--t-fast), opacity var(--t-fast);
+}
+.partner-slot:hover img { filter: none; opacity: 1; }
+.partner-slot span {
+  color: rgba(255,255,255,0.4);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Footer Grid Redesign */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: var(--sp-7);
+  padding-bottom: var(--sp-7);
+}
+.footer__brand {
+  display: inline-flex; align-items: center; gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+.footer__brand-logo {
+  width: 48px; height: 48px;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  background: rgba(255,255,255,0.06);
+  padding: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.footer__brand-name {
+  color: var(--c-white); font-size: var(--fs-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.footer__tagline {
+  color: rgba(255,255,255,0.6);
+  font-size: var(--fs-sm); max-width: 36ch;
+  margin-bottom: var(--sp-5);
+  line-height: 1.7;
+}
+
+/* Social Icons */
+.footer__social {
+  display: flex;
+  gap: var(--sp-3);
+}
+.footer__social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--c-white);
+  transition: all var(--t-fast);
+}
+.footer__social a:hover {
+  background: var(--c-action-blue);
+  border-color: var(--c-action-blue);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+.footer__social svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Links */
+.footer h4 {
+  color: var(--c-white); font-size: var(--fs-sm);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-bottom: var(--sp-5);
+}
+.footer ul {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: var(--sp-3);
+}
+.footer a {
+  color: rgba(255,255,255,0.65);
+  font-size: var(--fs-sm);
+  transition: color var(--t-fast);
+  display: inline-block;
+}
+.footer a:hover { color: var(--c-white); }
+
+.footer__contact-item {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  color: rgba(255,255,255,0.65);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-3);
+}
+.footer__contact-item svg {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  color: var(--c-action-blue);
+  margin-top: 2px;
+}
+
+/* Footer Bottom */
+.footer__bottom {
+  padding-block: var(--sp-5);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between; gap: var(--sp-3);
+  font-size: var(--fs-xs); color: rgba(255,255,255,0.5);
+}
+.footer__bottom-right {
+  display: flex; align-items: center; gap: var(--sp-4);
+}
+.footer__bottom-right a { color: rgba(255,255,255,0.5); font-weight: 500;}
+.footer__bottom-right a:hover { color: var(--c-white); }
+
+@media (max-width: 1024px) {
+  .partner-rail { grid-template-columns: repeat(3, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+}
+@media (max-width: 620px) {
+  .partner-rail { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; align-items: center; text-align: center; }
+  .footer__bottom-right { margin-top: var(--sp-2); flex-direction: column; gap: var(--sp-2); }
+}
+
+/* =========================================================
+   AUTH MODAL
+   ========================================================= */
+.auth-modal {
+  position: fixed; inset: 0; z-index: 200;
+  display: none;
+}
+.auth-modal[data-open="true"] { display: grid; place-items: center; }
+.auth-modal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(18, 59, 105, 0.6);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 200ms ease both;
+}
+.auth-modal__panel {
+  position: relative;
+  width: min(100% - 1.5rem, 1000px);
+  max-height: calc(100vh - 2rem);
+  background: var(--c-white);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: modalIn 240ms ease both;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+.auth-modal__close {
+  position: absolute; top: var(--sp-4); right: var(--sp-4); z-index: 3;
+  width: 36px; height: 36px; border-radius: var(--r-pill);
+  border: none; background: rgba(255,255,255,0.9);
+  color: var(--c-deep-blue);
+  cursor: pointer; display: grid; place-items: center;
+  box-shadow: var(--shadow-sm);
+}
+.auth-modal__close:hover { background: var(--bg-alt); }
+.auth-modal__grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  min-height: 600px;
+}
+.auth-brand {
+  background: radial-gradient(circle at 20% 10%, rgba(36,99,166,0.6), transparent 55%), linear-gradient(160deg, var(--c-deep-blue) 0%, #0E2E52 100%);
+  color: var(--c-white);
+  padding: var(--sp-8) var(--sp-6);
+  display: flex; align-items: center;
+}
+.auth-brand__logo-wrap {
+  width: 64px; height: 64px;
+  border-radius: var(--r-md);
+  background: rgba(255,255,255,0.12);
+  display: grid; place-items: center;
+  margin-bottom: var(--sp-5);
+}
+.auth-brand__logo { width: 52px; height: 52px; object-fit: contain; }
+.auth-brand__logo-fallback {
+  width: 52px; height: 52px;
+  border-radius: var(--r-md);
+  background: var(--c-white); color: var(--c-deep-blue);
+  font-weight: 700; display: grid; place-items: center;
+}
+.auth-brand__title { color: var(--c-white); font-size: var(--fs-xl); margin: 0 0 var(--sp-2); }
+.auth-brand__tagline { color: rgba(255,255,255,0.78); font-size: var(--fs-sm); margin-bottom: var(--sp-6); }
+.auth-brand__perks { list-style: none; padding: 0; margin: 0 0 var(--sp-6); display: grid; gap: var(--sp-3); }
+.auth-brand__perks li { display: flex; align-items: flex-start; gap: var(--sp-3); font-size: var(--fs-sm); color: rgba(255,255,255,0.88); line-height: 1.4; }
+.auth-brand__perks svg { flex-shrink: 0; color: #7FE3B0; margin-top: 2px; }
+.auth-brand__footnote { font-size: var(--fs-xs); color: rgba(255,255,255,0.55); margin: 0; padding-top: var(--sp-4); border-top: 1px solid rgba(255,255,255,0.15); }
+.auth-form-panel { padding: var(--sp-7) var(--sp-6); overflow-y: auto; max-height: calc(100vh - 2rem); }
+.auth-form-panel__head { margin-bottom: var(--sp-5); }
+.auth-modal__title { font-size: var(--fs-2xl); margin: 0 0 var(--sp-2); }
+.auth-modal__subtitle { color: var(--fg-muted); font-size: var(--fs-sm); margin: 0; }
+.auth-switch { font-size: var(--fs-sm); color: var(--fg-muted); margin: 0 0 var(--sp-5); padding-bottom: var(--sp-4); border-bottom: 1px solid var(--border); }
+.auth-switch a { font-weight: 600; color: var(--accent); }
+.auth-form { display: grid; gap: var(--sp-4); }
+.field { display: grid; gap: var(--sp-2); }
+.field label, .field__label-row label { font-size: var(--fs-sm); font-weight: 600; color: var(--c-deep-blue); }
+.field__label-row { display: flex; justify-content: space-between; align-items: baseline; }
+.field__link { font-size: var(--fs-xs); font-weight: 600; color: var(--accent); }
+.field__control { position: relative; display: flex; align-items: center; background: var(--c-white); border: 1px solid var(--border); border-radius: var(--r-md); }
+.field__control:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(36,99,166,.15); }
+.field__control input, .field__control select { flex: 1; border: none; background: transparent; padding: .75rem .85rem; font-family: inherit; font-size: var(--fs-md); color: var(--fg); outline: none; appearance: none; -webkit-appearance: none; }
+.field__control select { cursor: pointer; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23617386' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>"); background-repeat: no-repeat; background-position: right .85rem center; background-size: 18px; padding-right: 2.2rem; }
+.field__icon { display: grid; place-items: center; padding-left: .85rem; color: var(--fg-muted); }
+.field__toggle { background: none; border: none; cursor: pointer; padding: 0 .75rem; color: var(--fg-muted); display: grid; place-items: center; }
+.field__error { font-size: var(--fs-xs); color: #B42318; margin: 0; min-height: 1em; }
+.field__control[data-invalid="true"] { border-color: #B42318; box-shadow: 0 0 0 3px rgba(180,35,24,.12); }
+.password-strength { display: grid; gap: var(--sp-1); margin-top: var(--sp-1); }
+.password-strength__bar { height: 5px; background: var(--bg-alt); border-radius: var(--r-pill); overflow: hidden; }
+.password-strength__bar > span { display: block; height: 100%; width: 0%; background: #B42318; transition: width var(--t-fast), background var(--t-fast); }
+.password-strength[data-level="weak"] .password-strength__bar > span { width: 33%; background: #B42318; }
+.password-strength[data-level="fair"] .password-strength__bar > span { width: 66%; background: #C77700; }
+.password-strength[data-level="strong"] .password-strength__bar > span { width: 100%; background: #0F7B3A; }
+.checkbox-row { display: flex; align-items: flex-start; gap: var(--sp-3); font-size: var(--fs-sm); color: var(--fg); cursor: pointer; line-height: 1.4; }
+.checkbox-row input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--accent); flex-shrink: 0; }
+.checkbox-row a { color: var(--accent); font-weight: 600; }
+.auth-divider { display: flex; align-items: center; gap: var(--sp-3); margin-block: var(--sp-5); font-size: var(--fs-xs); color: var(--fg-muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+.auth-divider::before, .auth-divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.google-btn { display: flex; align-items: center; justify-content: center; gap: var(--sp-3); width: 100%; padding: .8rem 1rem; border-radius: var(--r-md); border: 1px solid var(--border); background: var(--c-white); color: var(--c-text); font-family: inherit; font-size: var(--fs-sm); font-weight: 600; cursor: pointer; }
+.google-btn:hover { background: var(--bg-alt); border-color: #B8C7DA; }
+.auth-note { display: flex; gap: var(--sp-2); align-items: flex-start; margin-top: var(--sp-5); padding: var(--sp-3); background: var(--bg-alt); border-radius: var(--r-md); font-size: var(--fs-xs); color: var(--fg-muted); line-height: 1.5; }
+.auth-note svg { flex-shrink: 0; color: var(--accent); margin-top: 1px; }
+@media (max-width: 780px) {
+  .auth-modal__grid { grid-template-columns: 1fr; min-height: 0; }
+  .auth-brand { padding: var(--sp-5); }
+  .auth-brand__perks, .auth-brand__footnote { display: none; }
+  .auth-brand__logo-wrap { margin-bottom: var(--sp-3); }
+  .auth-brand__tagline { margin-bottom: 0; }
+  .auth-form-panel { padding: var(--sp-5); max-height: none; }
+  .auth-modal__panel { max-height: calc(100vh - 1rem); overflow-y: auto; }
+}
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+[data-reveal] {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity 500ms ease, transform 500ms ease;
+  will-change: opacity, transform;
+}
+[data-reveal][data-revealed="true"] { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============================================================
+     HEADER — Unique layered navigation
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+
+  <!-- Top Identity Strip -->
+  <div class="top-strip">
+    <div class="container top-strip__inner">
+      <span class="top-strip__message">Empowering communities through practical skills.</span>
+      <div class="top-strip__links">
+        <a href="contact.html">Contact</a>
+        <a href="get-involved.html" class="top-strip__cta">Partner With Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header Row -->
+  <div class="header-main">
+    <div class="container header-main__inner">
+
+      <!-- Brand -->
+      <a href="index.html" class="brand" aria-label="Vision Bags Uganda — Home">
+        <span class="brand__logo-wrap">
+          <img src="images/logo.png" alt="Vision Bags Uganda Logo" class="brand__logo"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <span class="brand__logo-fallback" style="display:none;" aria-hidden="true">VB</span>
+        </span>
+        <span class="brand__name">
+          Vision Bags Uganda
+          <span class="brand__location">Seeta, Mukono</span>
+        </span>
+      </a>
+
+      <!-- Floating Segmented Navigation -->
+      <nav class="nav-panel" aria-label="Primary">
+        <ul class="nav-panel__list">
+          <li><a href="index.html" class="nav-link is-active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li class="has-dropdown">
+            <a href="programs.html" class="nav-link" aria-haspopup="true">
+              Programs
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="programs.html">Tailoring &amp; Bags</a></li>
+              <li><a href="programs.html">Reusable Pads</a></li>
+              <li><a href="programs.html">Soap &amp; Candles</a></li>
+              <li><a href="programs.html">Vision SACCO</a></li>
+            </ul>
+          </li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="impact.html" class="nav-link">Impact</a></li>
+          <li><a href="news.html" class="nav-link">Stories</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="header-actions">
+        <button type="button" class="header__signin" data-auth-open="login">Sign In</button>
+        <a href="get-involved.html" class="btn btn--primary">Partner With Us</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="menu-toggle" id="menuToggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+
+    </div>
+  </div>
+
+</header>
+
+<!-- Mobile Drawer -->
+<div class="mobile-menu-backdrop" id="menuBackdrop"></div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu__header">
+    <span class="mobile-menu__title">Menu</span>
+    <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu__body">
+    <ul class="mobile-links">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="programs.html" class="mobile-link">Programs</a></li>
+      <li><a href="products.html" class="mobile-link">Products</a></li>
+      <li><a href="impact.html" class="mobile-link">Impact</a></li>
+      <li><a href="news.html" class="mobile-link">Stories</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+  <div class="mobile-menu__footer">
+    <button type="button" class="btn btn--secondary btn--block" data-auth-open="login" style="margin-bottom:8px;">Sign In</button>
+    <a href="get-involved.html" class="btn btn--primary btn--block">Partner With Us</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO SLIDER
+       ============================================================ -->
+  <section class="hero" aria-labelledby="hero-title" data-hero>
+    <div class="hero__slides" aria-hidden="true">
+      <div class="hero__slide is-active" data-hero-slide>
+        <img src="images/hero-1.jpg" alt="" loading="eager" decoding="async">
+      </div>
+      <div class="hero__slide" data-hero-slide>
+        <img src="images/hero-2.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="hero__slide" data-hero-slide>
+        <img src="images/hero-3.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="hero__eyebrow">Community-Based Organization</span>
+        <h1 id="hero-title">Practical Skills. Stronger Communities.</h1>
+        <p class="hero__lead">
+          We work to equip people with practical skills and opportunities
+          that support more sustainable livelihoods.
+        </p>
+        <div class="hero__actions">
+          <a href="programs.html" class="btn btn--primary btn--lg">Explore Our Programs</a>
+          <a href="get-involved.html" class="btn btn--ghost-light btn--lg">Get Involved</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__controls">
+      <div class="container hero__controls-inner">
+        <div class="hero__dots" role="tablist" aria-label="Choose hero image" data-hero-dots>
+          <button type="button" class="hero__dot" role="tab" aria-selected="true" aria-label="Slide 1" data-hero-dot="0"></button>
+          <button type="button" class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 2" data-hero-dot="1"></button>
+          <button type="button" class="hero__dot" role="tab" aria-selected="false" aria-label="Slide 3" data-hero-dot="2"></button>
+        </div>
+        <div class="hero__arrows">
+          <button type="button" class="hero__arrow" aria-label="Previous slide" data-hero-prev>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="hero__arrow" aria-label="Next slide" data-hero-next>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT STRIP
+       ============================================================ -->
+  <section class="section section--alt" aria-labelledby="about-title">
+    <div class="container about-strip__grid" data-reveal>
+      <div>
+        <h2 id="about-title">Rooted in Seeta, Mukono</h2>
+        <p>
+          Vision Bags Uganda is a community-based organization working alongside
+          people in our community. Founding details and specific milestones are
+          shown here only after verification.
+        </p>
+        <p>
+          We focus on practical skills, community participation and sustainable
+          income pathways that support local livelihoods.
+        </p>
+        <div class="about-strip__meta">
+          <span class="chip">Seeta, Mukono, Uganda</span>
+          <span class="chip">Community-based organization</span>
+        </div>
+        <p style="margin-top: var(--sp-5);">
+          <a href="about.html" class="btn btn--secondary">Learn More About Us</a>
+        </p>
+      </div>
+      <div class="media-frame">
+        <img src="images/about.jpg"
+             alt="Vision Bags Uganda team and community members"
+             loading="lazy"
+             onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;media-placeholder&quot;>Approved organizational photograph (pending approval)</div>');">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURED PROGRAMS
+       ============================================================ -->
+  <section class="section" aria-labelledby="programs-title">
+    <div class="container">
+      <div class="section__head section__head--row" data-reveal>
+        <div>
+          <h2 id="programs-title">Featured Programs</h2>
+          <p>Practical skills training grounded in the community we serve.</p>
+        </div>
+        <a href="programs.html" class="btn btn--secondary">View All Programs</a>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/program-tailoring.jpg"
+                 alt="Participant sewing an African-print bag during a tailoring training session"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Tailoring &amp; bag making photo</div>');">
+          </div>
+          <div class="card__body">
+            <span class="card__badge">Skills Training</span>
+            <h3 class="card__title">Tailoring &amp; African-Print Bag Making</h3>
+            <p class="card__summary">
+              Hands-on training in sewing, pattern cutting and bag production
+              using African-print fabrics.
+            </p>
+            <div class="card__footer">
+              <a href="programs.html" class="card__link">Learn More →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/program-pads.jpg"
+                 alt="Reusable sanitary pad production training"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Reusable sanitary pad photo</div>');">
+          </div>
+          <div class="card__body">
+            <span class="card__badge">Skills Training</span>
+            <h3 class="card__title">Reusable Sanitary Pad Making</h3>
+            <p class="card__summary">
+              Training in the production of reusable sanitary pads, supporting
+              dignity and practical skills.
+            </p>
+            <div class="card__footer">
+              <a href="programs.html" class="card__link">Learn More →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/program-soap-candle.jpg"
+                 alt="Soap and candle making workshop"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Soap &amp; candle making photo</div>');">
+          </div>
+          <div class="card__body">
+            <span class="card__badge">Skills Training</span>
+            <h3 class="card__title">Soap &amp; Candle Making</h3>
+            <p class="card__summary">
+              Practical household and small-business skills in soap and candle
+              production.
+            </p>
+            <div class="card__footer">
+              <a href="programs.html" class="card__link">Learn More →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/program-sacco.jpg"
+                 alt="Vision SACCO savings group meeting"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Vision SACCO photo</div>');">
+          </div>
+          <div class="card__body">
+            <span class="card__badge">Community Finance</span>
+            <h3 class="card__title">Vision SACCO</h3>
+            <p class="card__summary">
+              A community savings and credit initiative supporting members'
+              economic participation.
+            </p>
+            <div class="card__footer">
+              <a href="programs.html" class="card__link">Learn More →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUCTS
+       ============================================================ -->
+  <section class="section section--alt" aria-labelledby="products-title">
+    <div class="container">
+      <div class="section__head section__head--row" data-reveal>
+        <div>
+          <h2 id="products-title">From Our Workshop</h2>
+          <p>Handmade products crafted through our training programs.</p>
+        </div>
+        <a href="products.html" class="btn btn--secondary">Explore Products</a>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/product-1.jpg" alt="Handmade African-print tote bag" loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Product photo</div>');">
+          </div>
+          <div class="card__body">
+            <span class="card__badge">Bags</span>
+            <h3 class="card__title">African-Print Tote Bag</h3>
+            <p class="card__summary">Handmade tote bag in vibrant African-print fabric.</p>
+            <div class="card__footer">
+              <a href="products.html" class="card__link">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/product-2.jpg" alt="Handmade fabric wallet" loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Product photo</div>');">
+          </div>
+          <div class="card__body">
+            <span class="card__badge">Wallets</span>
+            <h3 class="card__title">Fabric Wallet</h3>
+            <p class="card__summary">Compact handmade wallet in African-print fabric.</p>
+            <div class="card__footer">
+              <a href="products.html" class="card__link">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/product-3.jpg" alt="Handmade jacket" loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Product photo</div>');">
+          </div>
+          <div class="card__body">
+            <span class="card__badge">Apparel</span>
+            <h3 class="card__title">Handmade Jacket</h3>
+            <p class="card__summary">Tailored jacket, sewn by program participants.</p>
+            <div class="card__footer">
+              <a href="products.html" class="card__link">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/product-4.jpg" alt="Handmade pouch set" loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Product photo</div>');">
+          </div>
+          <div class="card__body">
+            <span class="card__badge">Accessories</span>
+            <h3 class="card__title">Pouch Set</h3>
+            <p class="card__summary">Set of handmade pouches in complementary prints.</p>
+            <div class="card__footer">
+              <a href="products.html" class="card__link">Enquire →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       APPROACH
+       ============================================================ -->
+  <section class="section" aria-labelledby="approach-title">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <h2 id="approach-title">How Our Approach Works</h2>
+        <p>
+          Our approach reflects how we intend to work: practical skills,
+          production, and reinvesting returns into community activities.
+          This is presented as our intended methodology, not a guaranteed
+          outcome.
+        </p>
+      </div>
+
+      <div class="approach">
+        <div class="approach__step" data-reveal>
+          <div class="approach__num">1</div>
+          <h3>Skills Development</h3>
+          <p>Participants learn practical, marketable skills through hands-on training in tailoring, bag making and related crafts.</p>
+        </div>
+        <div class="approach__step" data-reveal>
+          <div class="approach__num">2</div>
+          <h3>Production</h3>
+          <p>Trained participants produce bags, wallets and other handmade items, applying their skills in real production contexts.</p>
+        </div>
+        <div class="approach__step" data-reveal>
+          <div class="approach__num">3</div>
+          <h3>Reinvestment</h3>
+          <p>Returns from product sales are intended to support ongoing community activities, subject to organizational approval.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IMPACT
+       ============================================================ -->
+  <section class="section section--alt" aria-labelledby="impact-title">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <h2 id="impact-title">Our Impact</h2>
+        <p>Progress measured in opportunity.</p>
+      </div>
+
+      <div class="impact-mission" data-reveal>
+        <h3>Our Work, in Our Own Words</h3>
+        <p>
+          Verified impact metrics will be published here once the organization
+          has approved the figures and reporting periods. In the meantime, our
+          focus remains on equipping people with practical skills and
+          opportunities that support more sustainable livelihoods.
+        </p>
+        <a href="impact.html" class="btn btn--primary">Read About Our Approach</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PARTNER CTA
+       ============================================================ -->
+  <section class="section" aria-labelledby="partners-title">
+    <div class="container">
+      <div class="partners-cta" data-reveal>
+        <h2 id="partners-title">Partner With Us</h2>
+        <p>
+          We welcome conversations with individuals, businesses, institutions
+          and development partners who share our vision of a self-sustained
+          community living better lives.
+        </p>
+        <a href="get-involved.html" class="btn btn--ghost-light btn--lg">Get Involved</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEWS
+       ============================================================ -->
+  <section class="section section--alt" aria-labelledby="news-title">
+    <div class="container">
+      <div class="section__head section__head--row" data-reveal>
+        <div>
+          <h2 id="news-title">Latest News &amp; Stories</h2>
+          <p>Updates from our programs and community.</p>
+        </div>
+        <a href="news.html" class="btn btn--secondary">All News</a>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/news-1.jpg" alt="News story cover photograph" loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Story photo</div>');">
+          </div>
+          <div class="card__body">
+            <div class="news-card__meta"><span>Organization Update</span><span>•</span><span>Placeholder date</span></div>
+            <h3 class="card__title">Story Title Pending Approval</h3>
+            <p class="card__summary">Approved stories will appear here once published.</p>
+            <div class="card__footer"><a href="news.html" class="card__link">Read Story →</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/news-2.jpg" alt="News story cover photograph" loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Story photo</div>');">
+          </div>
+          <div class="card__body">
+            <div class="news-card__meta"><span>Training</span><span>•</span><span>Placeholder date</span></div>
+            <h3 class="card__title">Story Title Pending Approval</h3>
+            <p class="card__summary">Approved stories will appear here once published.</p>
+            <div class="card__footer"><a href="news.html" class="card__link">Read Story →</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__media">
+            <img src="images/news-3.jpg" alt="News story cover photograph" loading="lazy"
+                 onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=&quot;card__placeholder&quot;>Story photo</div>');">
+          </div>
+          <div class="card__body">
+            <div class="news-card__meta"><span>Community Stories</span><span>•</span><span>Placeholder date</span></div>
+            <h3 class="card__title">Story Title Pending Approval</h3>
+            <p class="card__summary">Approved stories will appear here once published.</p>
+            <div class="card__footer"><a href="news.html" class="card__link">Read Story →</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     SIGNATURE FOOTER (Redesigned)
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+
+    <!-- A. Partner Showcase -->
+    <div class="footer-partners">
+      <div class="footer-partners__head">
+        <h2>Working Together</h2>
+        <p>Organizations we've partnered with to build stronger communities.</p>
+      </div>
+      <div class="partner-rail">
+        <div class="partner-slot">
+          <img src="images/partner-1.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Partner'}));">
+        </div>
+        <div class="partner-slot">
+          <img src="images/partner-2.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Partner'}));">
+        </div>
+        <div class="partner-slot">
+          <img src="images/partner-3.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Partner'}));">
+        </div>
+        <div class="partner-slot">
+          <img src="images/partner-4.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Partner'}));">
+        </div>
+        <div class="partner-slot">
+          <img src="images/partner-5.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Partner'}));">
+        </div>
+        <div class="partner-slot">
+          <img src="images/partner-6.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Partner'}));">
+        </div>
+      </div>
+    </div>
+
+    <!-- B. Organization Info & Links -->
+    <div class="footer__grid">
+      
+      <!-- Brand & Social -->
+      <div>
+        <a href="index.html" class="footer__brand">
+          <img src="images/logo-white.png" alt="Vision Bags Uganda" class="footer__brand-logo"
+               onerror="this.style.display='none';">
+          <span class="footer__brand-name">Vision Bags Uganda</span>
+        </a>
+        <p class="footer__tagline">
+          A community-based organization in Seeta, Mukono, equipping people
+          with practical skills for more sustainable livelihoods.
+        </p>
+
+        <!-- Social Media Icons -->
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.61-5.48-.02-.29-.03-.58-.03-.87 0-2.77 1.6-5.39 4.12-6.59 1.12-.53 2.35-.76 3.59-.7v4.12c-.95-.22-1.97-.11-2.84.34-.99.49-1.7 1.42-1.96 2.48-.2.87-.09 1.81.32 2.6.55 1.08 1.65 1.84 2.84 2 1.15.16 2.34-.18 3.22-.94.62-.53 1.01-1.27 1.13-2.07.05-.39.04-.79.04-1.19V.02z"/></svg>
+          </a>
+          <a href="#" aria-label="X (Twitter)" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="impact.html">Our Impact</a></li>
+          <li><a href="news.html">News &amp; Stories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs & Products -->
+      <div>
+        <h4>Programs &amp; Products</h4>
+        <ul>
+          <li><a href="programs.html">All Programs</a></li>
+          <li><a href="products.html">Product Catalogue</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Details -->
+      <div>
+        <h4>Get in Touch</h4>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Seeta, Mukono District<br>Uganda</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>info@visionbags.example<br><small>Pending approval</small></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- C. Bottom Signature Strip -->
+    <div class="footer__bottom">
+      <span>&copy; <span data-current-year>2026</span> Vision Bags Uganda. All rights reserved.</span>
+      <div class="footer__bottom-right">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer__bottom-sep" aria-hidden="true">•</span>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ============================================================
+     AUTH MODAL
+     ============================================================ -->
+<div class="auth-modal" id="auth-modal" data-auth-modal aria-hidden="true">
+  <div class="auth-modal__backdrop" data-auth-close></div>
+
+  <div class="auth-modal__panel" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+    <button type="button" class="auth-modal__close" aria-label="Close" data-auth-close>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+
+    <div class="auth-modal__grid">
+      <aside class="auth-brand" aria-hidden="true">
+        <div class="auth-brand__inner">
+          <div class="auth-brand__logo-wrap">
+            <img src="images/logo-white.png" alt="" class="auth-brand__logo" width="52" height="52"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <span class="auth-brand__logo-fallback" style="display:none;">VB</span>
+          </div>
+          <h3 class="auth-brand__title">Vision Bags Uganda</h3>
+          <p class="auth-brand__tagline">Practical skills. Stronger communities.</p>
+          <ul class="auth-brand__perks">
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Track your enquiries and orders</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Save favourite handmade products</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Hear first about new programs and stories</span></li>
+          </ul>
+          <p class="auth-brand__footnote">A community-based organization in Seeta, Mukono.</p>
+        </div>
+      </aside>
+
+      <div class="auth-form-panel">
+        <section data-auth-panel="login">
+          <div class="auth-form-panel__head">
+            <h2 class="auth-modal__title" id="auth-title">Welcome back</h2>
+            <p class="auth-modal__subtitle">Sign in to your Vision Bags Uganda account.</p>
+          </div>
+          <p class="auth-switch">New to Vision Bags Uganda? <a href="#" data-auth-switch="signup">Create an account</a></p>
+          <form class="auth-form" data-auth-form="login" novalidate>
+            <div class="field">
+              <label for="login-email">Email address</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><polyline points="4 7 12 13 20 7"/></svg></span>
+                <input id="login-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required inputmode="email">
+              </div>
+              <p class="field__error" data-error-for="login-email" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <div class="field__label-row">
+                <label for="login-password">Password</label>
+                <a href="#" class="field__link" onclick="return false;">Forgot password?</a>
+              </div>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+                <input id="login-password" name="password" type="password" placeholder="Your password" autocomplete="current-password" required minlength="8">
+                <button type="button" class="field__toggle" data-password-toggle="login-password" aria-label="Show password">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <p class="field__error" data-error-for="login-password" aria-live="polite"></p>
+            </div>
+            <label class="checkbox-row"><input type="checkbox" name="remember"><span>Keep me signed in</span></label>
+            <button type="submit" class="btn btn--primary btn--block btn--lg" data-submit>
+              <span data-submit-label>Sign In</span>
+              <span class="btn__spinner" aria-hidden="true" hidden></span>
+            </button>
+          </form>
+          <div class="auth-divider"><span>or continue with</span></div>
+          <button type="button" class="google-btn" data-auth-google>
+            <svg viewBox="0 0 48 48" aria-hidden="true" width="20" height="20">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+          <div class="auth-note">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Preview only.</strong> Accounts and Google sign-in will connect to the Django backend in a later step. Nothing is submitted yet.</span>
+          </div>
+        </section>
+
+        <section data-auth-panel="signup" hidden>
+          <div class="auth-form-panel__head">
+            <h2 class="auth-modal__title" id="auth-title-signup">Create your account</h2>
+            <p class="auth-modal__subtitle">Join the Vision Bags Uganda community.</p>
+          </div>
+          <p class="auth-switch">Already have an account? <a href="#" data-auth-switch="login">Sign in</a></p>
+          <form class="auth-form" data-auth-form="signup" novalidate>
+            <div class="field">
+              <label for="signup-name">Full name</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+                <input id="signup-name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
+              </div>
+              <p class="field__error" data-error-for="signup-name" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="signup-email">Email address</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><polyline points="4 7 12 13 20 7"/></svg></span>
+                <input id="signup-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required inputmode="email">
+              </div>
+              <p class="field__error" data-error-for="signup-email" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="signup-phone">Phone number</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <input id="signup-phone" name="phone" type="tel" placeholder="+256 7XX XXX XXX" autocomplete="tel" required inputmode="tel">
+              </div>
+              <p class="field__error" data-error-for="signup-phone" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="signup-location">Location / District</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <select id="signup-location" name="location" required>
+                  <option value="">Select your district</option>
+                  <option value="Kampala">Kampala</option>
+                  <option value="Mukono">Mukono</option>
+                  <option value="Wakiso">Wakiso</option>
+                  <option value="Jinja">Jinja</option>
+                  <option value="Entebbe">Entebbe</option>
+                  <option value="Mbale">Mbale</option>
+                  <option value="Mbarara">Mbarara</option>
+                  <option value="Gulu">Gulu</option>
+                  <option value="Lira">Lira</option>
+                  <option value="Masaka">Masaka</option>
+                  <option value="Fort Portal">Fort Portal</option>
+                  <option value="Arua">Arua</option>
+                  <option value="Soroti">Soroti</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <p class="field__error" data-error-for="signup-location" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="signup-password">Password</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+                <input id="signup-password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" required minlength="8">
+                <button type="button" class="field__toggle" data-password-toggle="signup-password" aria-label="Show password">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="password-strength" data-strength hidden><div class="password-strength__bar"><span></span></div><small data-strength-label></small></div>
+              <p class="field__error" data-error-for="signup-password" aria-live="polite"></p>
+            </div>
+            <label class="checkbox-row">
+              <input type="checkbox" name="terms" required>
+              <span>I agree to the <a href="#" onclick="return false;">Terms of Use</a> and <a href="#" onclick="return false;">Privacy Policy</a>.</span>
+            </label>
+            <p class="field__error" data-error-for="signup-terms" aria-live="polite"></p>
+            <button type="submit" class="btn btn--primary btn--block btn--lg" data-submit>
+              <span data-submit-label>Create Account</span>
+              <span class="btn__spinner" aria-hidden="true" hidden></span>
+            </button>
+          </form>
+          <div class="auth-divider"><span>or continue with</span></div>
+          <button type="button" class="google-btn" data-auth-google>
+            <svg viewBox="0 0 48 48" aria-hidden="true" width="20" height="20">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+          <div class="auth-note">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Preview only.</strong> Accounts and Google sign-in will connect to the Django backend in a later step. Nothing is submitted yet.</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Mobile Menu ---------- */
+  var menuToggle = document.getElementById("menuToggle");
+  var closeMenuBtn = document.getElementById("closeMenu");
+  var mobileMenu = document.getElementById("mobileMenu");
+  var menuBackdrop = document.getElementById("menuBackdrop");
+  var body = document.body;
+
+  function openMenu() {
+    mobileMenu.classList.add("is-open");
+    menuBackdrop.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    mobileMenu.setAttribute("aria-hidden", "false");
+    body.style.overflow = "hidden";
+    var firstLink = mobileMenu.querySelector("a, button");
+    if (firstLink) setTimeout(function () { firstLink.focus(); }, 100);
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove("is-open");
+    menuBackdrop.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
+    body.style.overflow = "";
+    menuToggle.focus();
+  }
+  if (menuToggle) menuToggle.addEventListener("click", function () {
+    mobileMenu.classList.contains("is-open") ? closeMenu() : openMenu();
+  });
+  if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMenu);
+  if (menuBackdrop) menuBackdrop.addEventListener("click", closeMenu);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) closeMenu();
+  });
+
+  /* ---------- Sticky header shadow on scroll ---------- */
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 20) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+  }, { passive: true });
+
+  /* ---------- Hero slider ---------- */
+  var hero = document.querySelector("[data-hero]");
+  if (hero) {
+    var slides = hero.querySelectorAll("[data-hero-slide]");
+    var dots = hero.querySelectorAll("[data-hero-dot]");
+    var prevBtn = hero.querySelector("[data-hero-prev]");
+    var nextBtn = hero.querySelector("[data-hero-next]");
+    var index = 0;
+    var timer = null;
+    var INTERVAL = 6000;
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function render() {
+      slides.forEach(function (s, i) {
+        s.classList.toggle("is-active", i === index);
+        s.setAttribute("aria-hidden", i === index ? "false" : "true");
+      });
+      dots.forEach(function (d, i) {
+        d.setAttribute("aria-selected", i === index ? "true" : "false");
+      });
+    }
+    function goTo(i) {
+      var len = slides.length;
+      index = ((i % len) + len) % len;
+      render();
+    }
+    function start() {
+      stop();
+      if (reduceMotion || slides.length < 2) return;
+      timer = setInterval(function () { goTo(index + 1); }, INTERVAL);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () { goTo(i); start(); });
+    });
+    if (prevBtn) prevBtn.addEventListener("click", function () { goTo(index - 1); start(); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { goTo(index + 1); start(); });
+    hero.addEventListener("mouseenter", stop);
+    hero.addEventListener("mouseleave", start);
+    hero.addEventListener("focusin", stop);
+    hero.addEventListener("focusout", start);
+    document.addEventListener("visibilitychange", function () {
+      document.hidden ? stop() : start();
+    });
+    render();
+    start();
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  if (!prefersReduced && "IntersectionObserver" in window && revealEls.length) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.setAttribute("data-revealed", "true");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.setAttribute("data-revealed", "true"); });
+  }
+
+  /* ---------- Auth modal ---------- */
+  var modal = document.querySelector("[data-auth-modal]");
+  var openers = document.querySelectorAll("[data-auth-open]");
+  var closers = document.querySelectorAll("[data-auth-close]");
+  var switchers = document.querySelectorAll("[data-auth-switch]");
+  var panels = document.querySelectorAll("[data-auth-panel]");
+  var loginForm = document.querySelector('[data-auth-form="login"]');
+  var signupForm = document.querySelector('[data-auth-form="signup"]');
+  var lastFocused = null;
+
+  function setMode(mode) {
+    panels.forEach(function (p) { p.hidden = p.getAttribute("data-auth-panel") !== mode; });
+    var active = document.querySelector('[data-auth-panel="' + mode + '"]');
+    if (active) {
+      var first = active.querySelector("input, select, button");
+      if (first) setTimeout(function () { first.focus(); }, 40);
+    }
+    var panel = document.querySelector(".auth-form-panel");
+    if (panel) panel.scrollTop = 0;
+  }
+  function openModal(mode) {
+    if (!modal) return;
+    lastFocused = document.activeElement;
+    modal.setAttribute("data-open", "true");
+    modal.setAttribute("aria-hidden", "false");
+    body.style.overflow = "hidden";
+    setMode(mode || "login");
+  }
+  function closeModal() {
+    if (!modal) return;
+    modal.setAttribute("data-open", "false");
+    modal.setAttribute("aria-hidden", "true");
+    body.style.overflow = "";
+    if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+  }
+  openers.forEach(function (btn) { btn.addEventListener("click", function () { openModal(btn.getAttribute("data-auth-open") || "login"); }); });
+  closers.forEach(function (el) { el.addEventListener("click", closeModal); });
+  switchers.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      var t = link.getAttribute("data-auth-switch");
+      if (t) setMode(t);
+    });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal && modal.getAttribute("data-open") === "true") closeModal();
+  });
+
+  document.querySelectorAll("[data-password-toggle]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var input = document.getElementById(btn.getAttribute("data-password-toggle"));
+      if (!input) return;
+      var isPwd = input.type === "password";
+      input.type = isPwd ? "text" : "password";
+      btn.setAttribute("aria-label", isPwd ? "Hide password" : "Show password");
+    });
+  });
+
+  var signupPwd = document.getElementById("signup-password");
+  var strengthWrap = document.querySelector("[data-strength]");
+  var strengthLabel = document.querySelector("[data-strength-label]");
+  if (signupPwd && strengthWrap) {
+    signupPwd.addEventListener("input", function () {
+      var v = signupPwd.value;
+      if (!v) { strengthWrap.hidden = true; return; }
+      strengthWrap.hidden = false;
+      var score = 0;
+      if (v.length >= 8) score++;
+      if (/[A-Z]/.test(v) && /[a-z]/.test(v)) score++;
+      if (/[0-9]/.test(v) || /[^A-Za-z0-9]/.test(v)) score++;
+      var level = score <= 1 ? "weak" : score === 2 ? "fair" : "strong";
+      strengthWrap.setAttribute("data-level", level);
+      strengthLabel.textContent = "Password strength: " + level;
+    });
+  }
+
+  function setFieldError(inputEl, message) {
+    var errEl = document.querySelector('[data-error-for="' + inputEl.id + '"]');
+    var control = inputEl.closest(".field__control");
+    if (errEl) errEl.textContent = message || "";
+    if (control) control.setAttribute("data-invalid", message ? "true" : "false");
+  }
+  function validate(form) {
+    var ok = true;
+    form.querySelectorAll("input[required], select[required]").forEach(function (input) {
+      if (!input.checkValidity()) {
+        setFieldError(input, input.validationMessage || "This field is required.");
+        ok = false;
+      } else setFieldError(input, "");
+    });
+    return ok;
+  }
+  function submitPreview(form, label) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!validate(form)) return;
+      if (form.getAttribute("data-auth-form") === "signup") {
+        var terms = form.querySelector('input[name="terms"]');
+        var termsErr = document.querySelector('[data-error-for="signup-terms"]');
+        if (terms && !terms.checked) {
+          if (termsErr) termsErr.textContent = "Please agree to the Terms and Privacy Policy.";
+          return;
+        } else if (termsErr) termsErr.textContent = "";
+      }
+      var btn = form.querySelector("[data-submit]");
+      var spinner = btn.querySelector(".btn__spinner");
+      var labelEl = btn.querySelector("[data-submit-label]");
+      btn.disabled = true;
+      if (spinner) spinner.hidden = false;
+      if (labelEl) labelEl.textContent = "Please wait…";
+      setTimeout(function () {
+        btn.disabled = false;
+        if (spinner) spinner.hidden = true;
+        if (labelEl) labelEl.textContent = label;
+        alert("Preview only — " + label + " will connect to the Django backend shortly. Nothing was submitted.");
+      }, 700);
+    });
+  }
+  if (loginForm) submitPreview(loginForm, "Sign In");
+  if (signupForm) submitPreview(signupForm, "Create Account");
+
+  var googleBtn = document.querySelector("[data-auth-google]");
+  if (googleBtn) googleBtn.addEventListener("click", function () {
+    alert("Google Sign-In will be enabled once the Django backend and Google OAuth are configured.");
+  });
+
+  var yearEl = document.querySelector("[data-current-year]");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>

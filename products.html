@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Products — Vision Bags Uganda</title>
+<meta name="description" content="Handmade bags, wallets, jackets and accessories crafted through Vision Bags Uganda's skills training programs." />
+
+<meta property="og:title" content="Products — Vision Bags Uganda" />
+<meta property="og:description" content="Made with skill. Created with purpose." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===================== TOKENS ===================== */
+:root {
+  --c-deep-blue:#123B69; --c-action-blue:#2463A6; --c-pale-blue:#EAF3FC;
+  --c-white:#FFFFFF; --c-text:#172B3D; --c-muted:#617386;
+  --bg:var(--c-white); --bg-alt:var(--c-pale-blue); --bg-inverse:var(--c-deep-blue);
+  --fg:var(--c-text); --fg-muted:var(--c-muted); --fg-inverse:var(--c-white);
+  --accent:var(--c-action-blue); --border:#D9E3EE; --focus-ring:#F2B33D;
+  --font-sans:"Inter","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --fs-xs:.8125rem; --fs-sm:.9375rem; --fs-md:1.0625rem; --fs-lg:1.25rem;
+  --fs-xl:1.5rem; --fs-2xl:2rem; --fs-3xl:2.75rem; --fs-4xl:3.5rem;
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:.75rem; --sp-4:1rem;
+  --sp-5:1.5rem; --sp-6:2rem; --sp-7:3rem; --sp-8:4rem; --sp-9:6rem;
+  --r-sm:6px; --r-md:12px; --r-lg:18px; --r-xl:24px; --r-pill:999px;
+  --shadow-sm:0 1px 2px rgba(18,59,105,.06);
+  --shadow-md:0 6px 24px rgba(18,59,105,.08);
+  --shadow-lg:0 18px 48px rgba(18,59,105,.12);
+  --t-fast:150ms ease; --t-med:250ms ease;
+  --container:1200px; --header-h:72px;
+}
+
+/* ===================== RESET ===================== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{margin:0;font-family:var(--font-sans);font-size:var(--fs-md);line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+img,picture,video{max-width:100%;display:block;height:auto}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px;border-radius:var(--r-sm)}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--c-deep-blue);color:#fff;padding:var(--sp-3) var(--sp-4);z-index:100;border-radius:var(--r-sm)}
+.skip-link:focus{left:var(--sp-4);top:var(--sp-4)}
+
+/* ===================== TYPOGRAPHY ===================== */
+h1,h2,h3,h4{color:var(--c-deep-blue);line-height:1.15;margin:0 0 var(--sp-4);letter-spacing:-.01em}
+h1{font-size:clamp(2rem,4.5vw,var(--fs-4xl));font-weight:700}
+h2{font-size:clamp(1.6rem,3vw,var(--fs-3xl));font-weight:700}
+h3{font-size:clamp(1.15rem,2vw,var(--fs-xl));font-weight:600}
+h4{font-size:var(--fs-lg);font-weight:600}
+p{margin:0 0 var(--sp-4)}
+small{font-size:var(--fs-sm);color:var(--fg-muted)}
+
+/* ===================== LAYOUT ===================== */
+.container{width:min(100% - 2rem,var(--container));margin-inline:auto}
+.section{padding-block:var(--sp-9)}
+.section--alt{background:var(--bg-alt)}
+.section__head{max-width:720px;margin-bottom:var(--sp-6)}
+.section__head p{color:var(--fg-muted);font-size:var(--fs-lg)}
+
+/* ===================== BUTTONS ===================== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);padding:.75rem 1.5rem;font-size:var(--fs-sm);font-weight:600;border-radius:var(--r-pill);border:2px solid transparent;cursor:pointer;text-decoration:none;white-space:nowrap;font-family:inherit;transition:background var(--t-fast),color var(--t-fast),border-color var(--t-fast),transform var(--t-fast),box-shadow var(--t-fast)}
+.btn:hover{text-decoration:none}
+.btn--primary{background:var(--accent);color:var(--c-white)}
+.btn--primary:hover{background:var(--c-deep-blue)}
+.btn--secondary{background:transparent;color:var(--c-deep-blue);border-color:var(--c-deep-blue)}
+.btn--secondary:hover{background:var(--c-deep-blue);color:var(--c-white)}
+.btn--ghost-light{background:transparent;color:var(--c-white);border-color:rgba(255,255,255,.6)}
+.btn--ghost-light:hover{background:var(--c-white);color:var(--c-deep-blue);border-color:var(--c-white)}
+/* WhatsApp button — brand blue instead of green */
+.btn--whatsapp{background:var(--accent);color:#fff}
+.btn--whatsapp:hover{background:var(--c-deep-blue);box-shadow:0 6px 20px rgba(18,59,105,.25)}
+.btn--lg{padding:.95rem 1.9rem;font-size:var(--fs-md)}
+.btn--block{width:100%}
+
+/* WhatsApp icon sizing */
+.btn__wa-icon,.card-btn__wa-icon{display:inline-block;flex-shrink:0;width:18px;height:18px}
+
+/* ===================== HEADER ===================== */
+.site-header{position:sticky;top:0;z-index:50;background:var(--c-white);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-4);height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:var(--sp-3);color:var(--c-deep-blue);font-weight:700;font-size:var(--fs-lg);letter-spacing:-.01em}
+.brand:hover{text-decoration:none}
+.brand__logo-img{width:44px;height:44px;border-radius:var(--r-md);object-fit:contain;background:var(--c-white);padding:4px;box-shadow:var(--shadow-sm)}
+.brand__logo{width:44px;height:44px;border-radius:var(--r-md);background:var(--c-deep-blue);color:var(--c-white);display:grid;place-items:center;font-size:var(--fs-md);font-weight:700}
+.brand__name{line-height:1.1}
+.brand__name small{display:block;font-size:var(--fs-xs);font-weight:500;color:var(--fg-muted)}
+.nav-desktop{display:flex;align-items:center;gap:var(--sp-5)}
+.nav-desktop a{color:var(--fg);font-size:var(--fs-sm);font-weight:500;padding:var(--sp-2) 0;position:relative;transition:color var(--t-fast)}
+.nav-desktop a:hover{color:var(--accent);text-decoration:none}
+.nav-desktop a.active{color:var(--accent)}
+.nav-desktop a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform var(--t-fast)}
+.nav-desktop a:hover::after,.nav-desktop a.active::after{transform:scaleX(1)}
+.header__actions{display:flex;align-items:center;gap:var(--sp-3);margin-left:var(--sp-4)}
+.header__signin{background:none;border:none;padding:var(--sp-2);font-size:var(--fs-sm);font-weight:600;color:var(--c-deep-blue);cursor:pointer;font-family:inherit}
+.header__signin:hover{color:var(--accent)}
+.nav-toggle{display:none;background:none;border:0;padding:var(--sp-2);cursor:pointer;border-radius:var(--r-sm)}
+.nav-toggle__bars{display:block;width:24px;height:2px;background:var(--c-deep-blue);position:relative;transition:background var(--t-fast)}
+.nav-toggle__bars::before,.nav-toggle__bars::after{content:"";position:absolute;left:0;width:24px;height:2px;background:var(--c-deep-blue);transition:transform var(--t-med),top var(--t-med),bottom var(--t-med)}
+.nav-toggle__bars::before{top:-7px}
+.nav-toggle__bars::after{bottom:-7px}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars{background:transparent}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars::before{top:0;transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars::after{bottom:0;transform:rotate(-45deg)}
+.nav-mobile{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;background:var(--c-white);padding:var(--sp-6) var(--sp-5);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity var(--t-med),transform var(--t-med);overflow-y:auto;z-index:40}
+.nav-mobile[data-open="true"]{opacity:1;transform:translateY(0);pointer-events:auto}
+.nav-mobile ul{list-style:none;margin:0 0 var(--sp-5);padding:0;display:grid;gap:var(--sp-2)}
+.nav-mobile a{display:block;padding:var(--sp-3) var(--sp-4);border-radius:var(--r-md);color:var(--fg);font-weight:500;font-size:var(--fs-lg);border-bottom:1px solid var(--border)}
+.nav-mobile a:hover,.nav-mobile a.active{background:var(--bg-alt);color:var(--accent);text-decoration:none}
+.nav-mobile .btn{width:100%;margin-bottom:var(--sp-3)}
+@media (max-width:960px){.nav-desktop{display:none}.nav-toggle{display:inline-block}.header__actions{display:none}}
+
+/* ===================== PAGE HERO ===================== */
+.page-hero{position:relative;background:var(--c-deep-blue);color:var(--c-white);padding-block:var(--sp-8);overflow:hidden;isolation:isolate}
+.page-hero__bg{position:absolute;inset:0;z-index:-1}
+.page-hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.35}
+.page-hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(18,59,105,.92) 0%,rgba(18,59,105,.75) 55%,rgba(18,59,105,.6) 100%)}
+.page-hero__inner{max-width:780px}
+.page-hero__eyebrow{display:inline-block;padding:var(--sp-1) var(--sp-3);background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:var(--c-white);border-radius:var(--r-pill);font-size:var(--fs-xs);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--sp-4)}
+.page-hero h1{color:var(--c-white);font-size:clamp(2rem,4.5vw,3.25rem);margin-bottom:var(--sp-3)}
+.page-hero p{color:rgba(255,255,255,.85);font-size:var(--fs-lg);max-width:62ch;margin:0}
+
+/* ===================== CATALOG SECTION ===================== */
+.catalog-section{padding-block:var(--sp-8) var(--sp-9)}
+
+/* Toolbar */
+.catalog-toolbar{display:grid;gap:var(--sp-4);margin-bottom:var(--sp-6)}
+.catalog-toolbar__row{display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center}
+
+.search-box{position:relative;display:flex;align-items:center;background:var(--c-white);border:1px solid var(--border);border-radius:var(--r-pill);padding:.35rem .35rem .35rem 1rem;transition:border-color var(--t-fast),box-shadow var(--t-fast)}
+.search-box:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(36,99,166,.15)}
+.search-box svg{color:var(--fg-muted);flex-shrink:0}
+.search-box input{flex:1;border:none;background:transparent;padding:.5rem .75rem;font-family:inherit;font-size:var(--fs-sm);color:var(--fg);outline:none}
+.search-box input::placeholder{color:#9AA8B8}
+.search-box__clear{background:var(--bg-alt);border:none;border-radius:var(--r-pill);width:26px;height:26px;display:grid;place-items:center;color:var(--fg-muted);cursor:pointer;font-size:var(--fs-sm)}
+.search-box__clear:hover{background:var(--border)}
+
+/* Category tabs */
+.category-tabs{display:flex;gap:var(--sp-2);overflow-x:auto;padding-bottom:var(--sp-1);scrollbar-width:none;-ms-overflow-style:none}
+.category-tabs::-webkit-scrollbar{display:none}
+.category-tab{flex-shrink:0;background:var(--c-white);border:1px solid var(--border);border-radius:var(--r-pill);padding:.55rem var(--sp-4);font-size:var(--fs-sm);font-weight:600;color:var(--c-deep-blue);font-family:inherit;cursor:pointer;transition:background var(--t-fast),color var(--t-fast),border-color var(--t-fast),box-shadow var(--t-fast);display:inline-flex;align-items:center;gap:var(--sp-2)}
+.category-tab:hover{background:var(--bg-alt);border-color:#B8C7DA}
+.category-tab[aria-pressed="true"]{background:var(--c-deep-blue);color:var(--c-white);border-color:var(--c-deep-blue);box-shadow:var(--shadow-sm)}
+.category-tab__count{font-size:var(--fs-xs);font-weight:600;background:rgba(255,255,255,.25);padding:1px 7px;border-radius:var(--r-pill)}
+.category-tab[aria-pressed="false"] .category-tab__count{background:var(--bg-alt);color:var(--fg-muted)}
+
+/* Meta */
+.catalog-meta{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--sp-2);font-size:var(--fs-sm);color:var(--fg-muted);margin-bottom:var(--sp-5);padding-bottom:var(--sp-3);border-bottom:1px solid var(--border)}
+.catalog-meta strong{color:var(--c-deep-blue)}
+
+/* ===================== PRODUCT GRID ===================== */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-5)}
+@media (max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:820px){.products-grid{grid-template-columns:repeat(2,1fr);gap:var(--sp-4)}}
+@media (max-width:520px){.products-grid{grid-template-columns:1fr}}
+
+.product-card{background:var(--c-white);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;display:flex;flex-direction:column;transition:transform var(--t-med),box-shadow var(--t-med),border-color var(--t-med)}
+.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#C4D5E8}
+
+.product-card__media{position:relative;aspect-ratio:1/1;background:linear-gradient(160deg,var(--bg-alt),#D8E7F5);overflow:hidden}
+.product-card__media img{width:100%;height:100%;object-fit:cover;transition:transform 400ms ease}
+.product-card:hover .product-card__media img{transform:scale(1.05)}
+
+.product-card__badges{position:absolute;top:var(--sp-3);left:var(--sp-3);display:flex;flex-direction:column;gap:var(--sp-1);align-items:flex-start;z-index:1}
+.product-card__badge{padding:3px var(--sp-3);border-radius:var(--r-pill);font-size:var(--fs-xs);font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.95);color:var(--c-deep-blue);box-shadow:var(--shadow-sm)}
+.product-card__badge--featured{background:var(--c-deep-blue);color:var(--c-white)}
+
+/* Floating WhatsApp button — brand blue */
+.product-card__wa{position:absolute;bottom:var(--sp-3);right:var(--sp-3);z-index:1;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;border:2px solid #fff;box-shadow:0 6px 18px rgba(18,59,105,.35);transition:transform var(--t-fast),background var(--t-fast),box-shadow var(--t-fast);cursor:pointer;text-decoration:none}
+.product-card__wa:hover{background:var(--c-deep-blue);transform:scale(1.06);text-decoration:none;color:#fff}
+.product-card__wa:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
+.product-card__wa svg{width:22px;height:22px}
+
+.product-card__body{padding:var(--sp-4) var(--sp-4) var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-1);flex:1}
+.product-card__category{font-size:var(--fs-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.product-card__title{font-size:var(--fs-md);margin:var(--sp-1) 0 var(--sp-1);font-weight:700;line-height:1.3;letter-spacing:-.005em}
+.product-card__summary{color:var(--fg-muted);font-size:var(--fs-sm);margin:0 0 var(--sp-3);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.45}
+
+.product-card__actions{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2)}
+.card-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.65rem var(--sp-2);font-size:var(--fs-sm);font-weight:600;border-radius:var(--r-pill);border:2px solid transparent;cursor:pointer;font-family:inherit;transition:background var(--t-fast),color var(--t-fast),border-color var(--t-fast);text-decoration:none;white-space:nowrap;line-height:1.1}
+.card-btn svg{flex-shrink:0}
+.card-btn--enquire{background:var(--c-white);color:var(--c-deep-blue);border-color:var(--c-deep-blue)}
+.card-btn--enquire:hover{background:var(--c-deep-blue);color:var(--c-white);text-decoration:none}
+/* WhatsApp card button — brand blue */
+.card-btn--wa{background:var(--accent);color:#fff;border-color:var(--accent)}
+.card-btn--wa:hover{background:var(--c-deep-blue);border-color:var(--c-deep-blue);text-decoration:none;color:#fff}
+
+/* Empty state */
+.empty-state{text-align:center;padding:var(--sp-8) var(--sp-5);background:var(--bg-alt);border-radius:var(--r-lg);color:var(--fg-muted);margin-top:var(--sp-5)}
+.empty-state h3{color:var(--c-deep-blue)}
+.empty-state svg{color:var(--accent);margin-bottom:var(--sp-3)}
+
+/* ===================== BULK ORDER CTA ===================== */
+.bulk-cta{background:linear-gradient(135deg,var(--c-deep-blue) 0%,#0E2E52 100%);border-radius:var(--r-xl);padding:var(--sp-8);color:var(--c-white);position:relative;overflow:hidden}
+.bulk-cta::before{content:"";position:absolute;inset:-40% -10% auto auto;width:60%;height:160%;background:radial-gradient(circle,rgba(36,99,166,.55),transparent 60%);transform:rotate(-12deg);pointer-events:none}
+.bulk-cta__inner{position:relative;display:grid;grid-template-columns:1.4fr 1fr;gap:var(--sp-6);align-items:center}
+@media (max-width:800px){.bulk-cta__inner{grid-template-columns:1fr}}
+.bulk-cta h2{color:var(--c-white);margin-bottom:var(--sp-3)}
+.bulk-cta p{color:rgba(255,255,255,.85);font-size:var(--fs-lg);margin:0}
+.bulk-cta__actions{display:flex;flex-wrap:wrap;gap:var(--sp-3);justify-content:flex-end}
+@media (max-width:800px){.bulk-cta__actions{justify-content:flex-start}}
+
+/* ===================== CTA ===================== */
+.cta-block{background:var(--c-deep-blue);color:var(--c-white);border-radius:var(--r-xl);padding:var(--sp-8);text-align:center;position:relative;overflow:hidden}
+.cta-block::before{content:"";position:absolute;inset:-40% -10% auto auto;width:60%;height:160%;background:radial-gradient(circle,rgba(36,99,166,.55),transparent 60%);transform:rotate(-12deg);pointer-events:none}
+.cta-block>*{position:relative}
+.cta-block h2{color:var(--c-white);margin-bottom:var(--sp-3)}
+.cta-block p{color:rgba(255,255,255,.85);font-size:var(--fs-lg);max-width:60ch;margin-inline:auto;margin-bottom:var(--sp-6)}
+.cta-block__actions{display:flex;flex-wrap:wrap;gap:var(--sp-3);justify-content:center}
+
+/* ===================== ENQUIRY MODAL ===================== */
+.enquiry-modal{position:fixed;inset:0;z-index:210;display:none}
+.enquiry-modal[data-open="true"]{display:grid;place-items:center}
+.enquiry-modal__backdrop{position:absolute;inset:0;background:rgba(18,59,105,.6);backdrop-filter:blur(4px)}
+.enquiry-modal__panel{position:relative;width:min(100% - 1.5rem,520px);max-height:calc(100vh - 2rem);overflow-y:auto;background:var(--c-white);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);padding:var(--sp-6)}
+.enquiry-modal__close{position:absolute;top:var(--sp-3);right:var(--sp-3);width:36px;height:36px;border-radius:var(--r-pill);border:none;background:var(--bg-alt);color:var(--c-deep-blue);cursor:pointer;display:grid;place-items:center}
+.enquiry-modal__close:hover{background:var(--border)}
+.enquiry-modal h2{font-size:var(--fs-xl);margin-bottom:var(--sp-2)}
+.enquiry-modal__sub{color:var(--fg-muted);font-size:var(--fs-sm);margin-bottom:var(--sp-5)}
+.enquiry-modal__product{display:flex;gap:var(--sp-3);padding:var(--sp-3);background:var(--bg-alt);border-radius:var(--r-md);margin-bottom:var(--sp-5)}
+.enquiry-modal__product img{width:60px;height:60px;border-radius:var(--r-sm);object-fit:cover;flex-shrink:0}
+.enquiry-modal__product-info h3{font-size:var(--fs-md);margin:0 0 2px}
+.enquiry-modal__product-info p{font-size:var(--fs-sm);color:var(--fg-muted);margin:0}
+.enquiry-form{display:grid;gap:var(--sp-3)}
+.enquiry-form .field{display:grid;gap:var(--sp-2)}
+.enquiry-form label{font-size:var(--fs-sm);font-weight:600;color:var(--c-deep-blue)}
+.enquiry-form input,.enquiry-form textarea{width:100%;padding:.75rem .9rem;border:1px solid var(--border);border-radius:var(--r-md);font-family:inherit;font-size:var(--fs-md);color:var(--fg);background:var(--c-white);transition:border-color var(--t-fast),box-shadow var(--t-fast)}
+.enquiry-form input:focus,.enquiry-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(36,99,166,.15)}
+.enquiry-form textarea{resize:vertical;min-height:100px}
+.enquiry-form__row{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3)}
+@media (max-width:520px){.enquiry-form__row{grid-template-columns:1fr}}
+.enquiry-form__actions{display:grid;gap:var(--sp-2);margin-top:var(--sp-2)}
+.enquiry-form__or{display:flex;align-items:center;gap:var(--sp-3);margin-block:var(--sp-2);font-size:var(--fs-xs);color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.enquiry-form__or::before,.enquiry-form__or::after{content:"";flex:1;height:1px;background:var(--border)}
+.enquiry-form .field__error{font-size:var(--fs-xs);color:#B42318;margin:0;min-height:1em}
+.enquiry-form input[aria-invalid="true"],.enquiry-form textarea[aria-invalid="true"]{border-color:#B42318;box-shadow:0 0 0 3px rgba(180,35,24,.12)}
+
+/* ===================== FOOTER ===================== */
+.site-footer{background:var(--c-deep-blue);color:rgba(255,255,255,.85);padding-block:var(--sp-8) var(--sp-5)}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--sp-6);margin-bottom:var(--sp-6)}
+.footer__brand{display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-3)}
+.footer__brand-logo{width:40px;height:40px;object-fit:contain;border-radius:var(--r-md);background:rgba(255,255,255,.08);padding:4px}
+.footer__brand-name{color:var(--c-white);font-size:var(--fs-lg);font-weight:700}
+.footer__tagline{color:rgba(255,255,255,.7);font-size:var(--fs-sm);max-width:40ch}
+.footer h4{color:var(--c-white);font-size:var(--fs-sm);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--sp-4)}
+.footer ul{list-style:none;padding:0;margin:0;display:grid;gap:var(--sp-2)}
+.footer a{color:rgba(255,255,255,.75);font-size:var(--fs-sm);transition:color var(--t-fast)}
+.footer a:hover{color:var(--c-white)}
+.footer__partners{border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15);padding-block:var(--sp-6);margin-bottom:var(--sp-6)}
+.footer__partners-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--sp-4);margin-bottom:var(--sp-5);flex-wrap:wrap}
+.footer__partners-head h4{margin:0}
+.footer__partners-head small{color:rgba(255,255,255,.6);font-size:var(--fs-xs)}
+.marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.marquee__track{display:flex;width:max-content;gap:var(--sp-8);animation:marquee 38s linear infinite;will-change:transform}
+.marquee:hover .marquee__track,.marquee:focus-within .marquee__track{animation-play-state:paused}
+.marquee__item{flex:0 0 auto;height:48px;display:grid;place-items:center;opacity:.75;transition:opacity var(--t-fast)}
+.marquee__item img{max-height:48px;width:auto;max-width:140px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85}
+.marquee__placeholder{font-size:var(--fs-sm);color:rgba(255,255,255,.75);padding:var(--sp-2) var(--sp-4);border:1px dashed rgba(255,255,255,.35);border-radius:var(--r-md);white-space:nowrap}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee__track{animation:none}}
+.footer__bottom{padding-top:var(--sp-4);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--sp-3);font-size:var(--fs-xs);color:rgba(255,255,255,.6)}
+@media (max-width:900px){.footer__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:500px){.footer__grid{grid-template-columns:1fr}}
+
+/* ===================== AUTH MODAL ===================== */
+.auth-modal{position:fixed;inset:0;z-index:200;display:none}
+.auth-modal[data-open="true"]{display:grid;place-items:center}
+.auth-modal__backdrop{position:absolute;inset:0;background:rgba(18,59,105,.6);backdrop-filter:blur(4px)}
+.auth-modal__panel{position:relative;width:min(100% - 1.5rem,1000px);max-height:calc(100vh - 2rem);background:var(--c-white);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);overflow:hidden}
+.auth-modal__close{position:absolute;top:var(--sp-4);right:var(--sp-4);z-index:3;width:36px;height:36px;border-radius:var(--r-pill);border:none;background:rgba(255,255,255,.9);color:var(--c-deep-blue);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-sm)}
+.auth-modal__grid{display:grid;grid-template-columns:340px 1fr;min-height:600px}
+.auth-brand{background:radial-gradient(circle at 20% 10%,rgba(36,99,166,.6),transparent 55%),linear-gradient(160deg,var(--c-deep-blue) 0%,#0E2E52 100%);color:var(--c-white);padding:var(--sp-8) var(--sp-6);display:flex;align-items:center}
+.auth-brand__logo-wrap{width:64px;height:64px;border-radius:var(--r-md);background:rgba(255,255,255,.12);display:grid;place-items:center;margin-bottom:var(--sp-5)}
+.auth-brand__logo{width:52px;height:52px;object-fit:contain}
+.auth-brand__logo-fallback{width:52px;height:52px;border-radius:var(--r-md);background:var(--c-white);color:var(--c-deep-blue);font-weight:700;display:grid;place-items:center}
+.auth-brand__title{color:var(--c-white);font-size:var(--fs-xl);margin:0 0 var(--sp-2)}
+.auth-brand__tagline{color:rgba(255,255,255,.78);font-size:var(--fs-sm);margin-bottom:var(--sp-6)}
+.auth-brand__perks{list-style:none;padding:0;margin:0 0 var(--sp-6);display:grid;gap:var(--sp-3)}
+.auth-brand__perks li{display:flex;align-items:flex-start;gap:var(--sp-3);font-size:var(--fs-sm);color:rgba(255,255,255,.88);line-height:1.4}
+.auth-brand__perks svg{flex-shrink:0;color:#7FE3B0;margin-top:2px}
+.auth-brand__footnote{font-size:var(--fs-xs);color:rgba(255,255,255,.55);margin:0;padding-top:var(--sp-4);border-top:1px solid rgba(255,255,255,.15)}
+.auth-form-panel{padding:var(--sp-7) var(--sp-6);overflow-y:auto;max-height:calc(100vh - 2rem)}
+.auth-form-panel__head{margin-bottom:var(--sp-5)}
+.auth-modal__title{font-size:var(--fs-2xl);margin:0 0 var(--sp-2)}
+.auth-modal__subtitle{color:var(--fg-muted);font-size:var(--fs-sm);margin:0}
+.auth-switch{font-size:var(--fs-sm);color:var(--fg-muted);margin:0 0 var(--sp-5);padding-bottom:var(--sp-4);border-bottom:1px solid var(--border)}
+.auth-switch a{font-weight:600;color:var(--accent)}
+.auth-form{display:grid;gap:var(--sp-4)}
+.field{display:grid;gap:var(--sp-2)}
+.field label,.field__label-row label{font-size:var(--fs-sm);font-weight:600;color:var(--c-deep-blue)}
+.field__label-row{display:flex;justify-content:space-between;align-items:baseline}
+.field__link{font-size:var(--fs-xs);font-weight:600;color:var(--accent)}
+.field__control{position:relative;display:flex;align-items:center;background:var(--c-white);border:1px solid var(--border);border-radius:var(--r-md)}
+.field__control:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(36,99,166,.15)}
+.field__control input,.field__control select{flex:1;border:none;background:transparent;padding:.75rem .85rem;font-family:inherit;font-size:var(--fs-md);color:var(--fg);outline:none;appearance:none;-webkit-appearance:none}
+.field__control select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23617386' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat;background-position:right .85rem center;background-size:18px;padding-right:2.2rem}
+.field__icon{display:grid;place-items:center;padding-left:.85rem;color:var(--fg-muted)}
+.field__toggle{background:none;border:none;cursor:pointer;padding:0 .75rem;color:var(--fg-muted);display:grid;place-items:center}
+.field__error{font-size:var(--fs-xs);color:#B42318;margin:0;min-height:1em}
+.field__control[data-invalid="true"]{border-color:#B42318;box-shadow:0 0 0 3px rgba(180,35,24,.12)}
+.password-strength{display:grid;gap:var(--sp-1);margin-top:var(--sp-1)}
+.password-strength__bar{height:5px;background:var(--bg-alt);border-radius:var(--r-pill);overflow:hidden}
+.password-strength__bar>span{display:block;height:100%;width:0%;background:#B42318;transition:width var(--t-fast),background var(--t-fast)}
+.password-strength[data-level="weak"] .password-strength__bar>span{width:33%;background:#B42318}
+.password-strength[data-level="fair"] .password-strength__bar>span{width:66%;background:#C77700}
+.password-strength[data-level="strong"] .password-strength__bar>span{width:100%;background:#0F7B3A}
+.checkbox-row{display:flex;align-items:flex-start;gap:var(--sp-3);font-size:var(--fs-sm);color:var(--fg);cursor:pointer;line-height:1.4}
+.checkbox-row input[type="checkbox"]{width:18px;height:18px;margin-top:2px;accent-color:var(--accent);flex-shrink:0}
+.checkbox-row a{color:var(--accent);font-weight:600}
+.auth-divider{display:flex;align-items:center;gap:var(--sp-3);margin-block:var(--sp-5);font-size:var(--fs-xs);color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.auth-divider::before,.auth-divider::after{content:"";flex:1;height:1px;background:var(--border)}
+.google-btn{display:flex;align-items:center;justify-content:center;gap:var(--sp-3);width:100%;padding:.8rem 1rem;border-radius:var(--r-md);border:1px solid var(--border);background:var(--c-white);color:var(--c-text);font-family:inherit;font-size:var(--fs-sm);font-weight:600;cursor:pointer}
+.google-btn:hover{background:var(--bg-alt);border-color:#B8C7DA}
+.auth-note{display:flex;gap:var(--sp-2);align-items:flex-start;margin-top:var(--sp-5);padding:var(--sp-3);background:var(--bg-alt);border-radius:var(--r-md);font-size:var(--fs-xs);color:var(--fg-muted);line-height:1.5}
+.auth-note svg{flex-shrink:0;color:var(--accent);margin-top:1px}
+@media (max-width:780px){.auth-modal__grid{grid-template-columns:1fr;min-height:0}.auth-brand{padding:var(--sp-5)}.auth-brand__perks,.auth-brand__footnote{display:none}.auth-brand__logo-wrap{margin-bottom:var(--sp-3)}.auth-brand__tagline{margin-bottom:0}.auth-form-panel{padding:var(--sp-5);max-height:none}.auth-modal__panel{max-height:calc(100vh - 1rem);overflow-y:auto}}
+
+/* ===================== SCROLL REVEAL ===================== */
+[data-reveal]{opacity:0;transform:translateY(14px);transition:opacity 500ms ease,transform 500ms ease;will-change:opacity,transform}
+[data-reveal][data-revealed="true"]{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="brand" aria-label="Vision Bags Uganda — Home">
+      <img src="images/logo.png" alt="Vision Bags Uganda" class="brand__logo-img" width="44" height="44"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <span class="brand__logo" aria-hidden="true" style="display:none;">VB</span>
+      <span class="brand__name">Vision Bags Uganda <small>Seeta, Mukono</small></span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="products.html" class="active" aria-current="page">Products</a>
+      <a href="impact.html">Impact</a>
+      <a href="news.html">News &amp; Stories</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <button type="button" class="header__signin" data-auth-open="login">Sign In</button>
+      <a href="get-involved.html" class="btn btn--primary">Partner With Us</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false" data-nav-toggle>
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div id="mobile-nav" class="nav-mobile" role="dialog" aria-modal="true" aria-label="Menu" data-nav-mobile data-open="false">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="news.html">News &amp; Stories</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button type="button" class="btn btn--secondary btn--block" data-auth-open="login">Sign In</button>
+    <a href="get-involved.html" class="btn btn--primary btn--block">Partner With Us</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero" aria-labelledby="products-hero-title">
+    <div class="page-hero__bg" aria-hidden="true">
+      <img src="images/products-hero.jpg" alt="" onerror="this.style.display='none';">
+    </div>
+    <div class="container">
+      <div class="page-hero__inner">
+        <span class="page-hero__eyebrow">Products</span>
+        <h1 id="products-hero-title">Made with Skill. Created with Purpose.</h1>
+        <p>
+          Handmade bags, wallets, jackets and accessories crafted through
+          Vision Bags Uganda's skills training programs. Enquire or order
+          directly via WhatsApp — no online checkout.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATALOGUE ============ -->
+  <section class="catalog-section" aria-labelledby="catalog-title">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <h2 id="catalog-title">Our Collection</h2>
+        <p>
+          Browse by category, search by name, and connect with us on WhatsApp
+          to confirm details, colours and pricing.
+        </p>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="catalog-toolbar" data-reveal>
+        <div class="catalog-toolbar__row">
+          <div class="search-box" style="flex:1 1 260px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="search" id="product-search" placeholder="Search products…" aria-label="Search products" autocomplete="off">
+            <button type="button" class="search-box__clear" aria-label="Clear search" data-search-clear hidden>×</button>
+          </div>
+        </div>
+
+        <div class="category-tabs" role="group" aria-label="Filter products by category">
+          <button type="button" class="category-tab" aria-pressed="true" data-filter="all">
+            All <span class="category-tab__count">8</span>
+          </button>
+          <button type="button" class="category-tab" aria-pressed="false" data-filter="bags">
+            Bags <span class="category-tab__count">4</span>
+          </button>
+          <button type="button" class="category-tab" aria-pressed="false" data-filter="wallets">
+            Wallets <span class="category-tab__count">1</span>
+          </button>
+          <button type="button" class="category-tab" aria-pressed="false" data-filter="jackets">
+            Jackets <span class="category-tab__count">1</span>
+          </button>
+          <button type="button" class="category-tab" aria-pressed="false" data-filter="accessories">
+            Accessories <span class="category-tab__count">2</span>
+          </button>
+        </div>
+
+        <div class="catalog-meta">
+          <span><strong data-count-shown>8</strong> <span data-count-label>products</span></span>
+          <span>Prices confirmed on WhatsApp</span>
+        </div>
+      </div>
+
+      <!-- Product grid -->
+      <div class="products-grid" data-products-grid>
+
+        <!-- ============ PRODUCT 1 ============ -->
+        <article class="product-card" data-category="bags" data-name="African-Print Tote Bag" data-reveal>
+          <div class="product-card__media">
+            <div class="product-card__badges">
+              <span class="product-card__badge product-card__badge--featured">Featured</span>
+            </div>
+            <img src="images/prod-tote.jpg" alt="Handmade African-print tote bag" loading="lazy"
+                 onerror="this.style.display='none';">
+            <a href="#" class="product-card__wa" aria-label="Order African-Print Tote Bag on WhatsApp"
+               data-whatsapp data-product-name="African-Print Tote Bag">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+            </a>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Bags</span>
+            <h3 class="product-card__title">African-Print Tote Bag</h3>
+            <p class="product-card__summary">Handmade tote bag in vibrant African-print fabric.</p>
+            <div class="product-card__actions">
+              <button type="button" class="card-btn card-btn--enquire"
+                      data-enquire data-product-name="African-Print Tote Bag">Enquire</button>
+              <a href="#" class="card-btn card-btn--wa"
+                 data-whatsapp data-product-name="African-Print Tote Bag">
+                <svg class="card-btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ PRODUCT 2 ============ -->
+        <article class="product-card" data-category="wallets" data-name="Fabric Wallet" data-reveal>
+          <div class="product-card__media">
+            <img src="images/prod-wallet.jpg" alt="Handmade fabric wallet" loading="lazy"
+                 onerror="this.style.display='none';">
+            <a href="#" class="product-card__wa" aria-label="Order Fabric Wallet on WhatsApp"
+               data-whatsapp data-product-name="Fabric Wallet">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+            </a>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Wallets</span>
+            <h3 class="product-card__title">Fabric Wallet</h3>
+            <p class="product-card__summary">Compact handmade wallet in African-print fabric.</p>
+            <div class="product-card__actions">
+              <button type="button" class="card-btn card-btn--enquire"
+                      data-enquire data-product-name="Fabric Wallet">Enquire</button>
+              <a href="#" class="card-btn card-btn--wa"
+                 data-whatsapp data-product-name="Fabric Wallet">
+                <svg class="card-btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ PRODUCT 3 ============ -->
+        <article class="product-card" data-category="jackets" data-name="Handmade Jacket" data-reveal>
+          <div class="product-card__media">
+            <img src="images/prod-jacket.jpg" alt="Handmade tailored jacket" loading="lazy"
+                 onerror="this.style.display='none';">
+            <a href="#" class="product-card__wa" aria-label="Order Handmade Jacket on WhatsApp"
+               data-whatsapp data-product-name="Handmade Jacket">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+            </a>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Jackets</span>
+            <h3 class="product-card__title">Handmade Jacket</h3>
+            <p class="product-card__summary">Tailored jacket, sewn by program participants.</p>
+            <div class="product-card__actions">
+              <button type="button" class="card-btn card-btn--enquire"
+                      data-enquire data-product-name="Handmade Jacket">Enquire</button>
+              <a href="#" class="card-btn card-btn--wa"
+                 data-whatsapp data-product-name="Handmade Jacket">
+                <svg class="card-btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ PRODUCT 4 ============ -->
+        <article class="product-card" data-category="accessories" data-name="Pouch Set" data-reveal>
+          <div class="product-card__media">
+            <img src="images/prod-pouch.jpg" alt="Handmade pouch set" loading="lazy"
+                 onerror="this.style.display='none';">
+            <a href="#" class="product-card__wa" aria-label="Order Pouch Set on WhatsApp"
+               data-whatsapp data-product-name="Pouch Set">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+            </a>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Accessories</span>
+            <h3 class="product-card__title">Pouch Set</h3>
+            <p class="product-card__summary">Set of handmade pouches in complementary prints.</p>
+            <div class="product-card__actions">
+              <button type="button" class="card-btn card-btn--enquire"
+                      data-enquire data-product-name="Pouch Set">Enquire</button>
+              <a href="#" class="card-btn card-btn--wa"
+                 data-whatsapp data-product-name="Pouch Set">
+                <svg class="card-btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ PRODUCT 5 ============ -->
+        <article class="product-card" data-category="bags" data-name="Crossbody Bag" data-reveal>
+          <div class="product-card__media">
+            <img src="images/prod-crossbody.jpg" alt="Handmade crossbody bag" loading="lazy"
+                 onerror="this.style.display='none';">
+            <a href="#" class="product-card__wa" aria-label="Order Crossbody Bag on WhatsApp"
+               data-whatsapp data-product-name="Crossbody Bag">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+            </a>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Bags</span>
+            <h3 class="product-card__title">Crossbody Bag</h3>
+            <p class="product-card__summary">Handmade crossbody bag with adjustable strap.</p>
+            <div class="product-card__actions">
+              <button type="button" class="card-btn card-btn--enquire"
+                      data-enquire data-product-name="Crossbody Bag">Enquire</button>
+              <a href="#" class="card-btn card-btn--wa"
+                 data-whatsapp data-product-name="Crossbody Bag">
+                <svg class="card-btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ PRODUCT 6 ============ -->
+        <article class="product-card" data-category="bags" data-name="Mini Shoulder Bag" data-reveal>
+          <div class="product-card__media">
+            <img src="images/prod-mini.jpg" alt="Handmade mini shoulder bag" loading="lazy"
+                 onerror="this.style.display='none';">
+            <a href="#" class="product-card__wa" aria-label="Order Mini Shoulder Bag on WhatsApp"
+               data-whatsapp data-product-name="Mini Shoulder Bag">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+            </a>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Bags</span>
+            <h3 class="product-card__title">Mini Shoulder Bag</h3>
+            <p class="product-card__summary">Compact handmade shoulder bag in African-print fabric.</p>
+            <div class="product-card__actions">
+              <button type="button" class="card-btn card-btn--enquire"
+                      data-enquire data-product-name="Mini Shoulder Bag">Enquire</button>
+              <a href="#" class="card-btn card-btn--wa"
+                 data-whatsapp data-product-name="Mini Shoulder Bag">
+                <svg class="card-btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ PRODUCT 7 ============ -->
+        <article class="product-card" data-category="accessories" data-name="Key Holder" data-reveal>
+          <div class="product-card__media">
+            <img src="images/prod-keyholder.jpg" alt="Handmade key holder" loading="lazy"
+                 onerror="this.style.display='none';">
+            <a href="#" class="product-card__wa" aria-label="Order Key Holder on WhatsApp"
+               data-whatsapp data-product-name="Key Holder">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+            </a>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Accessories</span>
+            <h3 class="product-card__title">Key Holder</h3>
+            <p class="product-card__summary">Small handmade key holder in African-print fabric.</p>
+            <div class="product-card__actions">
+              <button type="button" class="card-btn card-btn--enquire"
+                      data-enquire data-product-name="Key Holder">Enquire</button>
+              <a href="#" class="card-btn card-btn--wa"
+                 data-whatsapp data-product-name="Key Holder">
+                <svg class="card-btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ PRODUCT 8 ============ -->
+        <article class="product-card" data-category="bags" data-name="Backpack" data-reveal>
+          <div class="product-card__media">
+            <img src="images/prod-backpack.jpg" alt="Handmade backpack" loading="lazy"
+                 onerror="this.style.display='none';">
+            <a href="#" class="product-card__wa" aria-label="Order Backpack on WhatsApp"
+               data-whatsapp data-product-name="Backpack">
+              <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+            </a>
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__category">Bags</span>
+            <h3 class="product-card__title">Backpack</h3>
+            <p class="product-card__summary">Handmade backpack with African-print panels.</p>
+            <div class="product-card__actions">
+              <button type="button" class="card-btn card-btn--enquire"
+                      data-enquire data-product-name="Backpack">Enquire</button>
+              <a href="#" class="card-btn card-btn--wa"
+                 data-whatsapp data-product-name="Backpack">
+                <svg class="card-btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty-state" data-empty-state hidden>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3>No products match your search</h3>
+        <p>Try a different keyword or category.</p>
+        <button type="button" class="btn btn--secondary" data-reset-filters>Reset filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BULK ORDER CTA ============ -->
+  <section class="section section--alt" aria-labelledby="bulk-title">
+    <div class="container">
+      <div class="bulk-cta" data-reveal>
+        <div class="bulk-cta__inner">
+          <div>
+            <h2 id="bulk-title">Bulk &amp; Custom Orders</h2>
+            <p>
+              For schools, groups and organizations — bulk or customized
+              orders can be discussed on request. Availability and details
+              pending confirmation from the organization.
+            </p>
+          </div>
+          <div class="bulk-cta__actions">
+            <a href="#" class="btn btn--whatsapp btn--lg" data-whatsapp data-product-name="Bulk / Custom Order">
+              <svg class="btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+              Enquire on WhatsApp
+            </a>
+            <a href="contact.html" class="btn btn--ghost-light btn--lg">Contact Form</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-block" data-reveal>
+        <h2 id="cta-title">Explore Our Programs</h2>
+        <p>
+          Every product is a step in a skills journey. Discover the training
+          and community initiatives behind our handmade items.
+        </p>
+        <div class="cta-block__actions">
+          <a href="programs.html" class="btn btn--ghost-light btn--lg">View Programs</a>
+          <a href="get-involved.html" class="btn btn--primary btn--lg">Get Involved</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <img src="images/logo-white.png" alt="Vision Bags Uganda" class="footer__brand-logo" width="40" height="40" onerror="this.style.display='none';">
+          <div class="footer__brand-name">Vision Bags Uganda</div>
+        </div>
+        <p class="footer__tagline">A community-based organization in Seeta, Mukono, equipping people with practical skills for more sustainable livelihoods.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="impact.html">Our Impact</a></li>
+          <li><a href="news.html">News &amp; Stories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Programs &amp; Products</h4>
+        <ul>
+          <li><a href="programs.html">All Programs</a></li>
+          <li><a href="products.html">Product Catalogue</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Seeta, Mukono, Uganda</li>
+          <li>Contact details pending approval</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__partners">
+      <div class="footer__partners-head"><h4>Partners &amp; Collaborators</h4><small>Approved partner logos pending confirmation</small></div>
+      <div class="marquee" aria-label="Partner logos">
+        <div class="marquee__track">
+          <div class="marquee__item"><img src="images/partner-1.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'marquee__placeholder',textContent:'Partner placeholder'}));"></div>
+          <div class="marquee__item"><img src="images/partner-2.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'marquee__placeholder',textContent:'Partner placeholder'}));"></div>
+          <div class="marquee__item"><img src="images/partner-3.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'marquee__placeholder',textContent:'Partner placeholder'}));"></div>
+          <div class="marquee__item"><img src="images/partner-4.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'marquee__placeholder',textContent:'Partner placeholder'}));"></div>
+          <div class="marquee__item"><img src="images/partner-5.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'marquee__placeholder',textContent:'Partner placeholder'}));"></div>
+          <div class="marquee__item"><img src="images/partner-6.png" alt="Partner logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'marquee__placeholder',textContent:'Partner placeholder'}));"></div>
+          <div class="marquee__item" aria-hidden="true"><img src="images/partner-1.png" alt=""></div>
+          <div class="marquee__item" aria-hidden="true"><img src="images/partner-2.png" alt=""></div>
+          <div class="marquee__item" aria-hidden="true"><img src="images/partner-3.png" alt=""></div>
+          <div class="marquee__item" aria-hidden="true"><img src="images/partner-4.png" alt=""></div>
+          <div class="marquee__item" aria-hidden="true"><img src="images/partner-5.png" alt=""></div>
+          <div class="marquee__item" aria-hidden="true"><img src="images/partner-6.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span data-current-year>2025</span> Vision Bags Uganda. All rights reserved.</span>
+      <span>Privacy Policy &amp; Terms — pending approval</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ ENQUIRY MODAL ============ -->
+<div class="enquiry-modal" id="enquiry-modal" data-enquiry-modal aria-hidden="true">
+  <div class="enquiry-modal__backdrop" data-enquiry-close></div>
+  <div class="enquiry-modal__panel" role="dialog" aria-modal="true" aria-labelledby="enquiry-title">
+    <button type="button" class="enquiry-modal__close" aria-label="Close" data-enquiry-close>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <h2 id="enquiry-title">Product Enquiry</h2>
+    <p class="enquiry-modal__sub">Fill in the form below, or order directly via WhatsApp.</p>
+    <div class="enquiry-modal__product">
+      <img src="images/prod-tote.jpg" alt="" data-enquiry-image onerror="this.style.display='none';">
+      <div class="enquiry-modal__product-info">
+        <h3 data-enquiry-name>Product</h3>
+        <p>Vision Bags Uganda</p>
+      </div>
+    </div>
+    <form class="enquiry-form" data-enquiry-form novalidate>
+      <div class="field">
+        <label for="enq-name">Your name</label>
+        <input id="enq-name" name="name" type="text" autocomplete="name" required>
+        <p class="field__error" data-error-for="enq-name" aria-live="polite"></p>
+      </div>
+      <div class="enquiry-form__row">
+        <div class="field">
+          <label for="enq-email">Email</label>
+          <input id="enq-email" name="email" type="email" autocomplete="email" required inputmode="email">
+          <p class="field__error" data-error-for="enq-email" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="enq-phone">Phone (optional)</label>
+          <input id="enq-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+      </div>
+      <div class="field">
+        <label for="enq-message">Message</label>
+        <textarea id="enq-message" name="message" required placeholder="Quantities, colours, timelines…"></textarea>
+        <p class="field__error" data-error-for="enq-message" aria-live="polite"></p>
+      </div>
+      <div class="enquiry-form__actions">
+        <button type="submit" class="btn btn--primary btn--block btn--lg">Send Enquiry</button>
+        <div class="enquiry-form__or">or</div>
+        <a href="#" class="btn btn--whatsapp btn--block btn--lg" data-enquiry-wa data-product-name="">
+          <svg class="btn__wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.245-1.045.045-1.375-.143-.245-2.15-1.347-2.294-1.347zm-3.24-9.98c-4.464 0-8.1 3.62-8.1 8.08a8.025 8.025 0 0 0 1.078 4.05L7.48 24l4.83-1.267a8.15 8.15 0 0 0 3.56.817c4.465 0 8.1-3.62 8.1-8.08s-3.635-8.08-8.1-8.08zm0 14.834c-1.386 0-2.76-.372-3.95-1.08l-2.786.73.745-2.71a7.275 7.275 0 0 1-1.143-3.87c0-4.02 3.29-7.29 7.334-7.29 4.045 0 7.334 3.27 7.334 7.29 0 4.02-3.29 7.29-7.334 7.29z"/></svg>
+          Order via WhatsApp
+        </a>
+      </div>
+      <small style="display:block;margin-top:var(--sp-3);color:var(--fg-muted);font-size:var(--fs-xs);line-height:1.5;">Preview only — will connect to Django backend shortly.</small>
+    </form>
+  </div>
+</div>
+
+<!-- ============ AUTH MODAL ============ -->
+<div class="auth-modal" id="auth-modal" data-auth-modal aria-hidden="true">
+  <div class="auth-modal__backdrop" data-auth-close></div>
+  <div class="auth-modal__panel" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+    <button type="button" class="auth-modal__close" aria-label="Close" data-auth-close>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="auth-modal__grid">
+      <aside class="auth-brand" aria-hidden="true">
+        <div class="auth-brand__inner">
+          <div class="auth-brand__logo-wrap">
+            <img src="images/logo-white.png" alt="" class="auth-brand__logo" width="52" height="52"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <span class="auth-brand__logo-fallback" style="display:none;">VB</span>
+          </div>
+          <h3 class="auth-brand__title">Vision Bags Uganda</h3>
+          <p class="auth-brand__tagline">Practical skills. Stronger communities.</p>
+          <ul class="auth-brand__perks">
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Track your enquiries and orders</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Save favourite handmade products</span></li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Hear first about new programs and stories</span></li>
+          </ul>
+          <p class="auth-brand__footnote">A community-based organization in Seeta, Mukono.</p>
+        </div>
+      </aside>
+      <div class="auth-form-panel">
+        <section data-auth-panel="login">
+          <div class="auth-form-panel__head">
+            <h2 class="auth-modal__title" id="auth-title">Welcome back</h2>
+            <p class="auth-modal__subtitle">Sign in to your Vision Bags Uganda account.</p>
+          </div>
+          <p class="auth-switch">New to Vision Bags Uganda? <a href="#" data-auth-switch="signup">Create an account</a></p>
+          <form class="auth-form" data-auth-form="login" novalidate>
+            <div class="field">
+              <label for="login-email">Email address</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><polyline points="4 7 12 13 20 7"/></svg></span>
+                <input id="login-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required inputmode="email">
+              </div>
+              <p class="field__error" data-error-for="login-email" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <div class="field__label-row">
+                <label for="login-password">Password</label>
+                <a href="#" class="field__link" onclick="return false;">Forgot password?</a>
+              </div>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+                <input id="login-password" name="password" type="password" placeholder="Your password" autocomplete="current-password" required minlength="8">
+                <button type="button" class="field__toggle" data-password-toggle="login-password" aria-label="Show password">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <p class="field__error" data-error-for="login-password" aria-live="polite"></p>
+            </div>
+            <label class="checkbox-row"><input type="checkbox" name="remember"><span>Keep me signed in</span></label>
+            <button type="submit" class="btn btn--primary btn--block btn--lg" data-submit>
+              <span data-submit-label>Sign In</span>
+              <span class="btn__spinner" aria-hidden="true" hidden></span>
+            </button>
+          </form>
+          <div class="auth-divider"><span>or continue with</span></div>
+          <button type="button" class="google-btn" data-auth-google>
+            <svg viewBox="0 0 48 48" aria-hidden="true" width="20" height="20">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+          <div class="auth-note">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Preview only.</strong> Accounts and Google sign-in will connect to the Django backend in a later step. Nothing is submitted yet.</span>
+          </div>
+        </section>
+
+        <section data-auth-panel="signup" hidden>
+          <div class="auth-form-panel__head">
+            <h2 class="auth-modal__title" id="auth-title-signup">Create your account</h2>
+            <p class="auth-modal__subtitle">Join the Vision Bags Uganda community.</p>
+          </div>
+          <p class="auth-switch">Already have an account? <a href="#" data-auth-switch="login">Sign in</a></p>
+          <form class="auth-form" data-auth-form="signup" novalidate>
+            <div class="field">
+              <label for="signup-name">Full name</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+                <input id="signup-name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
+              </div>
+              <p class="field__error" data-error-for="signup-name" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="signup-email">Email address</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><polyline points="4 7 12 13 20 7"/></svg></span>
+                <input id="signup-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required inputmode="email">
+              </div>
+              <p class="field__error" data-error-for="signup-email" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="signup-phone">Phone number</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <input id="signup-phone" name="phone" type="tel" placeholder="+256 7XX XXX XXX" autocomplete="tel" required inputmode="tel">
+              </div>
+              <p class="field__error" data-error-for="signup-phone" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="signup-location">Location / District</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <select id="signup-location" name="location" required>
+                  <option value="">Select your district</option>
+                  <option value="Kampala">Kampala</option>
+                  <option value="Mukono">Mukono</option>
+                  <option value="Wakiso">Wakiso</option>
+                  <option value="Jinja">Jinja</option>
+                  <option value="Entebbe">Entebbe</option>
+                  <option value="Mbale">Mbale</option>
+                  <option value="Mbarara">Mbarara</option>
+                  <option value="Gulu">Gulu</option>
+                  <option value="Lira">Lira</option>
+                  <option value="Masaka">Masaka</option>
+                  <option value="Fort Portal">Fort Portal</option>
+                  <option value="Arua">Arua</option>
+                  <option value="Soroti">Soroti</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <p class="field__error" data-error-for="signup-location" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="signup-password">Password</label>
+              <div class="field__control">
+                <span class="field__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+                <input id="signup-password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" required minlength="8">
+                <button type="button" class="field__toggle" data-password-toggle="signup-password" aria-label="Show password">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="password-strength" data-strength hidden><div class="password-strength__bar"><span></span></div><small data-strength-label></small></div>
+              <p class="field__error" data-error-for="signup-password" aria-live="polite"></p>
+            </div>
+            <label class="checkbox-row">
+              <input type="checkbox" name="terms" required>
+              <span>I agree to the <a href="#" onclick="return false;">Terms of Use</a> and <a href="#" onclick="return false;">Privacy Policy</a>.</span>
+            </label>
+            <p class="field__error" data-error-for="signup-terms" aria-live="polite"></p>
+            <button type="submit" class="btn btn--primary btn--block btn--lg" data-submit>
+              <span data-submit-label>Create Account</span>
+              <span class="btn__spinner" aria-hidden="true" hidden></span>
+            </button>
+          </form>
+          <div class="auth-divider"><span>or continue with</span></div>
+          <button type="button" class="google-btn" data-auth-google>
+            <svg viewBox="0 0 48 48" aria-hidden="true" width="20" height="20">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+          <div class="auth-note">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>Preview only.</strong> Accounts and Google sign-in will connect to the Django backend in a later step. Nothing is submitted yet.</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ JS ============ -->
+<script>
+(function () {
+  "use strict";
+
+  /* ========= CONFIG =========
+     TODO: replace WHATSAPP_NUMBER with the confirmed official number.
+     Format: country code + number, no '+' and no spaces. Uganda example: 2567XXXXXXXX.
+  */
+  var WHATSAPP_NUMBER = "256700000000"; // placeholder — pending confirmation
+
+  function waUrl(name) {
+    var msg = "Hello Vision Bags Uganda, I'd like to enquire about: " + (name || "a product") + ".";
+    return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+  }
+
+  /* Mobile nav */
+  var toggle = document.querySelector("[data-nav-toggle]");
+  var drawer = document.querySelector("[data-nav-mobile]");
+  var body = document.body;
+  function openNav() {
+    if (!drawer || !toggle) return;
+    drawer.setAttribute("data-open", "true");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close menu");
+    body.style.overflow = "hidden";
+    var first = drawer.querySelector("a, button");
+    if (first) first.focus();
+  }
+  function closeNav() {
+    if (!drawer || !toggle) return;
+    drawer.setAttribute("data-open", "false");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
+    body.style.overflow = "";
+    toggle.focus();
+  }
+  if (toggle && drawer) {
+    toggle.addEventListener("click", function () {
+      toggle.getAttribute("aria-expanded") === "true" ? closeNav() : openNav();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") closeNav();
+    });
+    drawer.querySelectorAll("a").forEach(function (l) { l.addEventListener("click", closeNav); });
+  }
+
+  /* Scroll reveal */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  if (!reduce && "IntersectionObserver" in window && revealEls.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.setAttribute("data-revealed", "true");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.setAttribute("data-revealed", "true"); });
+  }
+
+  /* Search + filter */
+  var searchInput = document.getElementById("product-search");
+  var searchClear = document.querySelector("[data-search-clear]");
+  var filterBtns = document.querySelectorAll("[data-filter]");
+  var resetBtn = document.querySelector("[data-reset-filters]");
+  var cards = document.querySelectorAll(".product-card");
+  var emptyState = document.querySelector("[data-empty-state]");
+  var countShown = document.querySelector("[data-count-shown]");
+  var countLabel = document.querySelector("[data-count-label]");
+  var activeCategory = "all";
+  var activeQuery = "";
+
+  function applyFilters() {
+    var visible = 0;
+    cards.forEach(function (card) {
+      var cat = card.getAttribute("data-category") || "";
+      var name = (card.getAttribute("data-name") || "").toLowerCase();
+      var matchCat = activeCategory === "all" || cat === activeCategory;
+      var matchQuery = !activeQuery || name.indexOf(activeQuery) !== -1;
+      var show = matchCat && matchQuery;
+      card.style.display = show ? "" : "none";
+      if (show) visible++;
+    });
+    if (emptyState) emptyState.hidden = visible > 0;
+    filterBtns.forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-filter") === activeCategory ? "true" : "false");
+    });
+    if (countShown) countShown.textContent = visible;
+    if (countLabel) countLabel.textContent = visible === 1 ? "product" : "products";
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      activeQuery = searchInput.value.trim().toLowerCase();
+      if (searchClear) searchClear.hidden = !searchInput.value;
+      applyFilters();
+    });
+  }
+  if (searchClear) {
+    searchClear.addEventListener("click", function () {
+      searchInput.value = "";
+      activeQuery = "";
+      searchClear.hidden = true;
+      applyFilters();
+      searchInput.focus();
+    });
+  }
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      activeCategory = btn.getAttribute("data-filter") || "all";
+      applyFilters();
+    });
+  });
+  if (resetBtn) {
+    resetBtn.addEventListener("click", function () {
+      activeCategory = "all";
+      activeQuery = "";
+      if (searchInput) searchInput.value = "";
+      if (searchClear) searchClear.hidden = true;
+      applyFilters();
+    });
+  }
+
+  /* WhatsApp */
+  document.querySelectorAll("[data-whatsapp]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.open(waUrl(a.getAttribute("data-product-name") || ""), "_blank", "noopener");
+    });
+  });
+
+  /* Enquiry modal */
+  var enquiryModal = document.querySelector("[data-enquiry-modal]");
+  var enquiryOpeners = document.querySelectorAll("[data-enquire]");
+  var enquiryClosers = document.querySelectorAll("[data-enquiry-close]");
+  var enquiryForm = document.querySelector("[data-enquiry-form]");
+  var enquiryName = document.querySelector("[data-enquiry-name]");
+  var enquiryImage = document.querySelector("[data-enquiry-image]");
+  var enquiryWaBtn = document.querySelector("[data-enquiry-wa]");
+  var lastFocusedEnq = null;
+
+  function openEnquiry(name, src) {
+    if (!enquiryModal) return;
+    lastFocusedEnq = document.activeElement;
+    enquiryModal.setAttribute("data-open", "true");
+    enquiryModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    if (enquiryName) enquiryName.textContent = name || "Product";
+    if (enquiryImage && src) { enquiryImage.src = src; enquiryImage.style.display = ""; }
+    if (enquiryWaBtn) enquiryWaBtn.setAttribute("data-product-name", name || "");
+    var first = enquiryModal.querySelector("input");
+    if (first) setTimeout(function () { first.focus(); }, 60);
+  }
+  function closeEnquiry() {
+    if (!enquiryModal) return;
+    enquiryModal.setAttribute("data-open", "false");
+    enquiryModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocusedEnq && typeof lastFocusedEnq.focus === "function") lastFocusedEnq.focus();
+  }
+
+  enquiryOpeners.forEach(function (b) {
+    b.addEventListener("click", function (e) {
+      e.preventDefault();
+      var name = b.getAttribute("data-product-name") || "Product";
+      var card = b.closest(".product-card");
+      var img = card ? card.querySelector(".product-card__media img") : null;
+      openEnquiry(name, img ? img.getAttribute("src") : "");
+    });
+  });
+  enquiryClosers.forEach(function (el) { el.addEventListener("click", closeEnquiry); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && enquiryModal && enquiryModal.getAttribute("data-open") === "true") closeEnquiry();
+  });
+
+  if (enquiryWaBtn) {
+    enquiryWaBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.open(waUrl(enquiryWaBtn.getAttribute("data-product-name") || ""), "_blank", "noopener");
+    });
+  }
+
+  function setErr(inputEl, msg) {
+    var errEl = document.querySelector('[data-error-for="' + inputEl.id + '"]');
+    if (errEl) errEl.textContent = msg || "";
+    inputEl.setAttribute("aria-invalid", msg ? "true" : "false");
+  }
+  if (enquiryForm) {
+    enquiryForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ok = true;
+      enquiryForm.querySelectorAll("input[required], textarea[required]").forEach(function (input) {
+        if (!input.checkValidity()) {
+          setErr(input, input.validationMessage || "This field is required.");
+          ok = false;
+        } else setErr(input, "");
+      });
+      if (!ok) return;
+      var btn = enquiryForm.querySelector('button[type="submit"]');
+      var old = btn.textContent;
+      btn.disabled = true; btn.textContent = "Sending…";
+      setTimeout(function () {
+        btn.disabled = false; btn.textContent = old;
+        alert("Preview only — your enquiry will be stored in the Django backend shortly. Nothing was submitted yet.");
+        enquiryForm.reset(); closeEnquiry();
+      }, 700);
+    });
+  }
+
+  /* Auth modal */
+  var authModal = document.querySelector("[data-auth-modal]");
+  var authOpeners = document.querySelectorAll("[data-auth-open]");
+  var authClosers = document.querySelectorAll("[data-auth-close]");
+  var authSwitchers = document.querySelectorAll("[data-auth-switch]");
+  var authPanels = document.querySelectorAll("[data-auth-panel]");
+  var lastAuthFocused = null;
+
+  function setAuthMode(mode) {
+    authPanels.forEach(function (p) { p.hidden = p.getAttribute("data-auth-panel") !== mode; });
+    var active = document.querySelector('[data-auth-panel="' + mode + '"]');
+    if (active) { var f = active.querySelector("input,select,button"); if (f) setTimeout(function () { f.focus(); }, 40); }
+    var panel = document.querySelector(".auth-form-panel"); if (panel) panel.scrollTop = 0;
+  }
+  function openAuth(mode) {
+    if (!authModal) return;
+    lastAuthFocused = document.activeElement;
+    authModal.setAttribute("data-open", "true");
+    authModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    setAuthMode(mode || "login");
+  }
+  function closeAuth() {
+    if (!authModal) return;
+    authModal.setAttribute("data-open", "false");
+    authModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastAuthFocused && typeof lastAuthFocused.focus === "function") lastAuthFocused.focus();
+  }
+  authOpeners.forEach(function (b) { b.addEventListener("click", function () { openAuth(b.getAttribute("data-auth-open") || "login"); }); });
+  authClosers.forEach(function (el) { el.addEventListener("click", closeAuth); });
+  authSwitchers.forEach(function (l) {
+    l.addEventListener("click", function (e) { e.preventDefault(); var t = l.getAttribute("data-auth-switch"); if (t) setAuthMode(t); });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && authModal && authModal.getAttribute("data-open") === "true") closeAuth();
+  });
+
+  /* Password toggles + strength */
+  document.querySelectorAll("[data-password-toggle]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var input = document.getElementById(btn.getAttribute("data-password-toggle"));
+      if (!input) return;
+      var isPwd = input.type === "password";
+      input.type = isPwd ? "text" : "password";
+      btn.setAttribute("aria-label", isPwd ? "Hide password" : "Show password");
+    });
+  });
+  var signupPwd = document.getElementById("signup-password");
+  var strengthWrap = document.querySelector("[data-strength]");
+  var strengthLabel = document.querySelector("[data-strength-label]");
+  if (signupPwd && strengthWrap) {
+    signupPwd.addEventListener("input", function () {
+      var v = signupPwd.value;
+      if (!v) { strengthWrap.hidden = true; return; }
+      strengthWrap.hidden = false;
+      var score = 0;
+      if (v.length >= 8) score++;
+      if (/[A-Z]/.test(v) && /[a-z]/.test(v)) score++;
+      if (/[0-9]/.test(v) || /[^A-Za-z0-9]/.test(v)) score++;
+      var level = score <= 1 ? "weak" : score === 2 ? "fair" : "strong";
+      strengthWrap.setAttribute("data-level", level);
+      strengthLabel.textContent = "Password strength: " + level;
+    });
+  }
+
+  /* Auth validation (preview) */
+  function setFieldError(inputEl, message) {
+    var errEl = document.querySelector('[data-error-for="' + inputEl.id + '"]');
+    var control = inputEl.closest(".field__control");
+    if (errEl) errEl.textContent = message || "";
+    if (control) control.setAttribute("data-invalid", message ? "true" : "false");
+  }
+  function validateAuth(form) {
+    var ok = true;
+    form.querySelectorAll("input[required], select[required]").forEach(function (input) {
+      if (!input.checkValidity()) {
+        setFieldError(input, input.validationMessage || "This field is required.");
+        ok = false;
+      } else setFieldError(input, "");
+    });
+    return ok;
+  }
+  function submitAuthPreview(form, label) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!validateAuth(form)) return;
+      if (form.getAttribute("data-auth-form") === "signup") {
+        var terms = form.querySelector('input[name="terms"]');
+        var termsErr = document.querySelector('[data-error-for="signup-terms"]');
+        if (terms && !terms.checked) {
+          if (termsErr) termsErr.textContent = "Please agree to the Terms and Privacy Policy.";
+          return;
+        } else if (termsErr) termsErr.textContent = "";
+      }
+      var btn = form.querySelector("[data-submit]");
+      var spinner = btn.querySelector(".btn__spinner");
+      var labelEl = btn.querySelector("[data-submit-label]");
+      btn.disabled = true;
+      if (spinner) spinner.hidden = false;
+      if (labelEl) labelEl.textContent = "Please wait…";
+      setTimeout(function () {
+        btn.disabled = false;
+        if (spinner) spinner.hidden = true;
+        if (labelEl) labelEl.textContent = label;
+        alert("Preview only — " + label + " will connect to the Django backend shortly. Nothing was submitted.");
+      }, 700);
+    });
+  }
+  var loginForm = document.querySelector('[data-auth-form="login"]');
+  var signupForm = document.querySelector('[data-auth-form="signup"]');
+  if (loginForm) submitAuthPreview(loginForm, "Sign In");
+  if (signupForm) submitAuthPreview(signupForm, "Create Account");
+  var googleBtn = document.querySelector("[data-auth-google]");
+  if (googleBtn) googleBtn.addEventListener("click", function () {
+    alert("Google Sign-In will be enabled once the Django backend and Google OAuth are configured.");
+  });
+
+  /* Footer year */
+  var yearEl = document.querySelector("[data-current-year]");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
